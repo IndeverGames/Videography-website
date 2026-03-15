@@ -92,7 +92,7 @@ export default function Home() {
             <iframe
               src={siteConfig.googleFormEmbed}
               width="100%"
-              height="600"
+              height="993"
               frameBorder="0"
               marginHeight={0}
               marginWidth={0}
