@@ -77,26 +77,31 @@ export const equipment = [
     name: "Panasonic GH5",
     description:
       "4K ultra high definition. Up to 60 frames per second. 10-bit colour. But most importantly: nimble, efficient, compact. This is my secret weapon for stunning videos on the fly!",
+    image: "/images/equipment-gh5.jpg",
   },
   {
     name: "DJI Ronin-S Gimbal stabilization",
     description:
       "Compact, lightweight, fast setup. Nothing beats this gimbal for efficiency. And nothing beats a silky smooth tracking shot!",
+    image: "/images/equipment-ronin.jpg",
   },
   {
     name: "Sennheiser microphones",
     description:
       "Shotgun and lapels for fast turn-around, top quality audio.",
+    image: "/images/equipment-sennheiser.jpg",
   },
   {
     name: "Aputure Amaran 100d lights",
     description:
       "Compact and reliable. Powerful and versatile. These are my go to lights for speed and efficiency.",
+    image: "/images/equipment-aputure.jpg",
   },
   {
     name: "Edit suite",
     description:
       "Powered by AMD's flagship 5950x processor, RTX 4080 graphics, dual-screen 4K monitoring, and blazing fast SSDs, I waste no time waiting for videos to render.",
+    image: "/images/equipment-edit-suite.jpg",
   },
 ];
 

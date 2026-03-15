@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { services, equipment, softwareNote, valueProps, testimonials, soloFilmingQuote, pricingNote } from "@/lib/data";
 
 export const metadata = {
@@ -93,11 +94,21 @@ export default function Prices() {
           <p className="text-gray-500 mb-10">
             This is my go-to, everyday kit that is included in my price.
           </p>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-10">
             {equipment.map((item) => (
-              <div key={item.name}>
-                <h3 className="font-bold text-lg mb-1">{item.name}</h3>
-                <p className="text-gray-600">{item.description}</p>
+              <div key={item.name} className="flex flex-col sm:flex-row gap-6 items-start">
+                <div className="relative w-full sm:w-48 h-36 flex-shrink-0 rounded-xl overflow-hidden bg-gray-100">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-1">{item.name}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div>
               </div>
             ))}
           </div>

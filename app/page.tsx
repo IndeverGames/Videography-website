@@ -20,7 +20,11 @@ export default function Home() {
             Christchurch Videography
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mb-4">
-            Professional, engaging videos at unbeatable prices.
+            Professional, engaging videos at{" "}
+            <Link href="/prices" className="underline underline-offset-4 hover:text-white transition-colors">
+              unbeatable prices
+            </Link>
+            .
           </p>
           <p className="text-lg text-gray-300 max-w-xl mb-10">
             I exceed client expectations with beautiful and effective video content, making the process simple, efficient and enjoyable.
