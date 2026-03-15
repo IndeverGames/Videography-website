@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { services, equipment, softwareNote, valueProps, testimonials, soloFilmingQuote, pricingNote } from "@/lib/data";
+import { services, equipment, softwareNote, valueProps, testimonials, soloFilmingQuote, pricingNote, portfolioVideos } from "@/lib/data";
 
 export const metadata = {
   title: "Prices — Ben Childs Videography",
@@ -84,6 +84,29 @@ export default function Prices() {
           >
             Get in Touch
           </Link>
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-14">Portfolio</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {portfolioVideos.map((video) => (
+              <div key={video.embedUrl}>
+                <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-200 shadow-sm">
+                  <iframe
+                    src={video.embedUrl}
+                    title={video.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  />
+                </div>
+                <p className="mt-3 text-sm font-semibold text-gray-700 px-1">{video.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
