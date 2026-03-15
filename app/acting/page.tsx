@@ -67,7 +67,10 @@ export default function Acting() {
           <div className="flex flex-col divide-y divide-gray-100">
             {actingCredits.theatre.map((credit) => (
               <div key={credit.title} className="py-4 flex items-baseline justify-between gap-4">
-                <p className="font-semibold">{credit.title}</p>
+                <div>
+                  <p className="font-semibold">{credit.title}</p>
+                  <p className="text-sm text-gray-500">{credit.role} — {credit.company}</p>
+                </div>
                 <span className="text-sm text-gray-400 flex-shrink-0">{credit.year}</span>
               </div>
             ))}

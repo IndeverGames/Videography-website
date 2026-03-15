@@ -237,11 +237,11 @@ export const actingCredits = {
     { year: "2012", title: "Supernova", type: "Short Film", role: "Nicky Brick" },
   ],
   theatre: [
-    { year: "2011", title: "King Richard II" },
-    { year: "2011", title: "Angels in America" },
-    { year: "2010", title: "Sweet Phoebe" },
-    { year: "2010", title: "Ladies Night" },
-    { year: "2010", title: "Hay Fever" },
+    { year: "2011", title: "Hay Fever", role: "Sandy Tyrell", company: "Canterbury Celebration Theatre" },
+    { year: "2011", title: "Ladies Night", role: "Norman", company: "Canterbury Celebration Theatre" },
+    { year: "2011", title: "Sweet Phoebe", role: "Frazer", company: "Scriptease Productions" },
+    { year: "2010", title: "Angels in America: Millennium Approaches", role: "Joe Pitt", company: "Scriptease Productions" },
+    { year: "2010", title: "King Richard II", role: "Lord Green", company: "Scriptease Productions" },
   ],
 };
 
