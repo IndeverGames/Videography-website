@@ -171,30 +171,29 @@ export const films = [
     title: "Space Trash Men",
     year: "2015",
     award: "Official Selection — Show Me Shorts",
-    // Replace with your actual YouTube or Vimeo embed URL
-    embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
+    embedUrl: "https://www.youtube.com/embed/VgKHb4yqaLU",
     platform: "youtube" as const,
   },
   {
     title: "Birdsong",
     year: "2013",
     award: "Best Foreign Film — IndieFest USA",
-    embedUrl: "https://player.vimeo.com/video/YOUR_VIDEO_ID",
-    platform: "vimeo" as const,
+    embedUrl: "https://www.youtube.com/embed/1gh_g2_oJbc",
+    platform: "youtube" as const,
   },
   {
     title: "Supernova",
     year: "2012",
     award: "Christchurch Runner-up — 48 Hours",
-    embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
-    platform: "youtube" as const,
+    embedUrl: "https://player.vimeo.com/video/134257690",
+    platform: "vimeo" as const,
   },
   {
     title: "Space Trash Men: Behind the Scenes",
     year: "2015",
     award: "",
-    embedUrl: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
-    platform: "youtube" as const,
+    embedUrl: "https://player.vimeo.com/video/105461030",
+    platform: "vimeo" as const,
   },
 ];
 
