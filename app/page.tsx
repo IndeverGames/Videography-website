@@ -21,7 +21,7 @@ export default function Home() {
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mb-4">
             Professional, engaging videos at{" "}
-            <Link href="/prices" className="underline underline-offset-4 hover:text-white transition-colors">
+            <Link href="/videography" className="underline underline-offset-4 hover:text-white transition-colors">
               unbeatable prices
             </Link>
             .
@@ -31,7 +31,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/prices"
+              href="/videography"
               className="px-8 py-3 bg-white text-gray-950 font-semibold rounded-full hover:bg-gray-100 transition-colors"
             >
               View Prices

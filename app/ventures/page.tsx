@@ -44,7 +44,7 @@ export default function Ventures() {
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link
-              href="/prices"
+              href="/videography"
               className="px-8 py-3 bg-gray-950 text-white font-semibold rounded-full hover:bg-gray-800 transition-colors text-center"
             >
               View Prices
