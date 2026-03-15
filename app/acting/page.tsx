@@ -14,7 +14,7 @@ export default function Acting() {
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">Acting</h1>
         <p className="text-gray-300 max-w-lg mx-auto text-lg">
-          An experienced actor and director having played speaking roles in three feature films, directed two award-winning shorts, and studied with world-class experts.
+          I'm an experienced actor and director with speaking roles in three feature films, and I have directed two award winning shorts.
         </p>
       </section>
 
