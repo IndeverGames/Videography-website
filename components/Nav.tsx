@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { siteConfig } from "@/lib/data";
@@ -20,8 +21,14 @@ export default function Nav() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-lg font-semibold tracking-tight text-gray-900">
-          Ben Childs
+        <Link href="/">
+          <Image
+            src="/images/logo.png"
+            alt="Ben Childs"
+            width={120}
+            height={40}
+            className="h-8 w-auto"
+          />
         </Link>
 
         {/* Desktop nav */}

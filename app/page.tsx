@@ -1,55 +1,69 @@
 import Link from "next/link";
-import { testimonials, clients, siteConfig } from "@/lib/data";
+import Image from "next/image";
+import { testimonials, siteConfig } from "@/lib/data";
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="min-h-[90vh] flex flex-col justify-center items-center text-center px-6 bg-gray-950 text-white">
-        <p className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4">
-          Christchurch, New Zealand
-        </p>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-          Christchurch
-          <br />
-          <span className="text-gray-400">Videography</span>
-        </h1>
-        <p className="text-lg md:text-xl text-gray-300 max-w-xl mb-10">
-          Professional video production at{" "}
-          <Link href="/prices" className="underline underline-offset-4 hover:text-white transition-colors">
-            unbeatable prices
-          </Link>
-          . Exceeding client expectations, every time.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="/prices"
-            className="px-8 py-3 bg-white text-gray-950 font-semibold rounded-full hover:bg-gray-100 transition-colors"
-          >
-            View Prices
-          </Link>
-          <a
-            href="#contact"
-            className="px-8 py-3 border border-white/30 text-white font-semibold rounded-full hover:border-white transition-colors"
-          >
-            Get in Touch
-          </a>
+      <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 text-white overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/hero-1.jpg"
+          alt="Ben Childs on set"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gray-950/70" />
+
+        {/* Content */}
+        <div className="relative z-10">
+          <p className="text-sm font-semibold uppercase tracking-widest text-gray-300 mb-4">
+            Christchurch, New Zealand
+          </p>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+            Christchurch
+            <br />
+            <span className="text-gray-400">Videography</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-300 max-w-xl mb-10">
+            Professional video production at{" "}
+            <Link href="/prices" className="underline underline-offset-4 hover:text-white transition-colors">
+              unbeatable prices
+            </Link>
+            . Exceeding client expectations, every time.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/prices"
+              className="px-8 py-3 bg-white text-gray-950 font-semibold rounded-full hover:bg-gray-100 transition-colors"
+            >
+              View Prices
+            </Link>
+            <a
+              href="#contact"
+              className="px-8 py-3 border border-white/30 text-white font-semibold rounded-full hover:border-white transition-colors"
+            >
+              Get in Touch
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Trusted by */}
+      {/* Client logos */}
       <section className="py-16 px-6 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs uppercase tracking-widest text-gray-400 mb-8">
             Trusted by
           </p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-            {clients.map((client) => (
-              <span key={client} className="text-gray-400 font-medium">
-                {client}
-              </span>
-            ))}
-          </div>
+          <Image
+            src="/images/client-logos.png"
+            alt="Clients including Storypark, Fire and Emergency NZ, Beagle Innovations"
+            width={700}
+            height={120}
+            className="mx-auto opacity-60"
+          />
         </div>
       </section>
 
