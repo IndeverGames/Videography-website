@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ventures, credentialsBio, siteConfig } from "@/lib/data";
 
 export const metadata = {
@@ -17,17 +18,25 @@ export default function Ventures() {
       {/* Ventures grid */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {ventures.map((venture, i) => (
-            <div
+          {ventures.map((venture) => (
+            <Link
               key={venture.title}
-              className="rounded-2xl border border-gray-200 p-8 hover:shadow-md transition-shadow"
+              href={venture.href}
+              className="group rounded-2xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
             >
-              <div className="text-3xl font-bold text-gray-200 mb-4 select-none">
-                0{i + 1}
+              <div className="relative w-full h-52 bg-gray-100">
+                <Image
+                  src={venture.image}
+                  alt={venture.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              <h2 className="text-xl font-bold mb-3">{venture.title}</h2>
-              <p className="text-gray-600 leading-relaxed">{venture.description}</p>
-            </div>
+              <div className="p-8">
+                <h2 className="text-xl font-bold mb-3">{venture.title}</h2>
+                <p className="text-gray-600 leading-relaxed">{venture.description}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </section>

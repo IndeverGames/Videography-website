@@ -203,20 +203,74 @@ export const ventures = [
     title: "Video Production",
     description:
       "Allow me to bring your ideas to life with outstanding, stress-free, cost-effective videos.",
+    image: "/images/ventures-video-production.jpg",
+    href: "/videography",
   },
   {
     title: "Film",
     description:
       "Check out some award-winning short films that I have written, directed and produced.",
+    image: "/images/ventures-film.png",
+    href: "/films",
   },
   {
     title: "Acting",
     description:
       "I am an experienced actor and director having played speaking roles in three features films, directed two award winning shorts, and studied with world-class experts.",
+    image: "/images/ventures-acting.png",
+    href: "/acting",
   },
   {
     title: "Interactive Media",
     description:
       "I'd love to chat with you about how I can bring your interactive projects and apps to life with the Unity game engine.",
+    image: "/images/ventures-interactive.png",
+    href: "/interactive",
+  },
+];
+
+export const actingCredits = {
+  film: [
+    { year: "2020", title: "Friend to the Friendless", type: "TV Movie", role: "Scott Guy" },
+    { year: "2019", title: "Daffodils", type: "Feature Film", role: "Dave" },
+    { year: "2019", title: "Births, Deaths, and Marriages", type: "Feature Film", role: "Dean" },
+    { year: "2013", title: "Old Man's Game", type: "Short Film", role: "Peter" },
+    { year: "2012", title: "Supernova", type: "Short Film", role: "Nicky Brick" },
+  ],
+  theatre: [
+    { year: "2011", title: "King Richard II" },
+    { year: "2011", title: "Angels in America" },
+    { year: "2010", title: "Sweet Phoebe" },
+    { year: "2010", title: "Ladies Night" },
+    { year: "2010", title: "Hay Fever" },
+  ],
+};
+
+export const interactiveProjects = [
+  {
+    title: "Super Mayor",
+    description:
+      "A feel-good 2D platformer / metroidvania where you play as a councillor to a rural farming district in New Zealand! Solve problems, meet the public, and become MAYOR in this hilarious, story-rich adventure.",
+    image: "/images/interactive-super-mayor.gif",
+    links: [
+      { label: "Play it free now on Windows & Mac!", href: "https://store.steampowered.com" },
+    ],
+  },
+  {
+    title: "Dough Get Baked",
+    description:
+      "Warning this demo is extremely high in carbohydrates! You're a lump of bread dough, fallen from grace into a world of baked goods. Your life mission is to find an oven and get baked. Split, squish and puzzle your way to redemption in this whimsical adventure.",
+    image: "/images/interactive-dough.png",
+    links: [
+      { label: "Download on Google Play", href: "https://play.google.com" },
+    ],
+  },
+  {
+    title: "Interactive Toddler",
+    description:
+      "Pitched just right for your child. This digital toy is lovingly created by a real dad for his 18 month old daughter. Pop bubbles, wave at the cow, help the sheep kick a ball, and listen to the peaceful countryside sounds as a pig flies lazily on by.",
+    image: "/images/interactive-toddler.png",
+    links: [],
+    note: "This prototype is no longer available on the App store.",
   },
 ];
