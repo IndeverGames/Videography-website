@@ -34,6 +34,12 @@ export default function Home() {
           >
             Get in Touch
           </a>
+          <Link
+            href="/ventures"
+            className="px-8 py-3 border border-white/30 text-white font-semibold rounded-full hover:border-white transition-colors"
+          >
+            About Me
+          </Link>
         </div>
       </section>
 
