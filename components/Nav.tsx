@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/data";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/prices", label: "Prices" },
+  { href: "/videography", label: "Prices" },
   { href: "/films", label: "Films" },
   { href: "/ventures", label: "Ventures" },
 ];
