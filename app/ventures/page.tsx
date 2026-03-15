@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ventures, siteConfig } from "@/lib/data";
+import { ventures, credentialsBio, siteConfig } from "@/lib/data";
 
 export const metadata = {
   title: "Ventures — Ben Childs",
@@ -11,14 +11,7 @@ export default function Ventures() {
     <>
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
-        <p className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4">
-          About
-        </p>
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">Ventures</h1>
-        <p className="text-gray-300 max-w-lg mx-auto text-lg">
-          Ben Childs is a Christchurch-based creative professional working across
-          video production, film, acting, and interactive media.
-        </p>
       </section>
 
       {/* Ventures grid */}
@@ -39,27 +32,14 @@ export default function Ventures() {
         </div>
       </section>
 
-      {/* Bio / credentials */}
+      {/* Credentials / bio */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">About Ben</h2>
-          <div className="prose prose-gray max-w-none text-gray-700 leading-relaxed space-y-4">
-            <p>
-              Based in Christchurch, New Zealand, Ben Childs is an experienced producer,
-              director, and actor with a track record spanning commercial video production,
-              narrative short films, and interactive media.
-            </p>
-            <p>
-              His films have screened at international festivals including Show Me Shorts
-              and IndieFest USA, where <em>Birdsong</em> won Best Foreign Film. He has
-              held speaking roles in three feature films and trained with world-class
-              industry experts.
-            </p>
-            <p>
-              On the commercial side, Ben has served as Senior Media Manager at Storypark
-              and spent 5+ years as a consultant to Fire and Emergency New Zealand —
-              bringing the same outcome-focused discipline to every client project.
-            </p>
+          <h2 className="text-3xl font-bold mb-8">My credentials</h2>
+          <div className="space-y-4 text-gray-700 leading-relaxed">
+            {credentialsBio.split("\n\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
           </div>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -88,7 +68,9 @@ export default function Ventures() {
           </div>
           <div>
             <p className="font-semibold text-gray-900 mb-1">Hours</p>
-            <p>{siteConfig.hours}</p>
+            {siteConfig.hours.map((h) => (
+              <p key={h.day}>{h.day} {h.hours}</p>
+            ))}
           </div>
           <div>
             <p className="font-semibold text-gray-900 mb-1">Contact</p>

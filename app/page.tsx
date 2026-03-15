@@ -7,7 +7,6 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 text-white overflow-hidden">
-        {/* Background image */}
         <Image
           src="/images/hero-1.jpg"
           alt="Ben Childs on set"
@@ -16,23 +15,15 @@ export default function Home() {
           priority
         />
         <div className="absolute inset-0 bg-gray-950/70" />
-
-        {/* Content */}
         <div className="relative z-10">
-          <p className="text-sm font-semibold uppercase tracking-widest text-gray-300 mb-4">
-            Christchurch, New Zealand
-          </p>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            Christchurch
-            <br />
-            <span className="text-gray-400">Videography</span>
+            Christchurch Videography
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-xl mb-10">
-            Professional video production at{" "}
-            <Link href="/prices" className="underline underline-offset-4 hover:text-white transition-colors">
-              unbeatable prices
-            </Link>
-            . Exceeding client expectations, every time.
+          <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mb-4">
+            Professional, engaging videos at unbeatable prices.
+          </p>
+          <p className="text-lg text-gray-300 max-w-xl mb-10">
+            I exceed client expectations with beautiful and effective video content, making the process simple, efficient and enjoyable.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -74,7 +65,7 @@ export default function Home() {
             What clients say
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((t, i) => (
+            {testimonials.slice(0, 4).map((t, i) => (
               <div
                 key={i}
                 className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
@@ -94,12 +85,9 @@ export default function Home() {
       {/* Contact */}
       <section id="contact" className="py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Let&apos;s chat about your project
+          <h2 className="text-3xl font-bold mb-10">
+            Let&apos;s chat about your project today
           </h2>
-          <p className="text-gray-500 mb-10">
-            Fill in the form below and I&apos;ll get back to you within one business day.
-          </p>
           <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
             <iframe
               src={siteConfig.googleFormEmbed}

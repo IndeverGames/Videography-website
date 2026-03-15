@@ -29,7 +29,9 @@ export default function Footer() {
               {siteConfig.phone}
             </a>
             <p className="mt-1 text-gray-500">{siteConfig.address}</p>
-            <p className="text-gray-500">{siteConfig.hours}</p>
+            {siteConfig.hours.map((h) => (
+              <p key={h.day} className="text-gray-500">{h.day} {h.hours}</p>
+            ))}
           </div>
         </div>
 
