@@ -93,7 +93,7 @@ export default function Acting() {
       </section>
 
       <div className="py-6 px-6 text-center">
-        <Link href="/ventures" className="text-sm text-gray-400 hover:text-gray-900 transition-colors">
+        <Link href="/about" className="text-sm text-gray-400 hover:text-gray-900 transition-colors">
           ← Back to Ventures
         </Link>
       </div>

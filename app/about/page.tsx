@@ -5,7 +5,7 @@ import { ventures, credentialsBio, siteConfig } from "@/lib/data";
 export const metadata = {
   title: "About — Christchurch Videographer Ben Childs",
   description: "Ben Childs is an award-winning Christchurch videographer and filmmaker with 10+ years experience in affordable video production, film, acting, and interactive media.",
-  alternates: { canonical: "https://www.benchilds.co.nz/ventures" },
+  alternates: { canonical: "https://www.benchilds.co.nz/about" },
 };
 
 export default function Ventures() {

@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/videography", label: "Prices" },
   { href: "/films", label: "Films" },
-  { href: "/ventures", label: "Ventures" },
+  { href: "/about", label: "Ventures" },
 ];
 
 export default function Nav() {
