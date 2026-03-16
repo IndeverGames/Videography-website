@@ -84,14 +84,6 @@ const structuredData = {
     latitude: -43.5321,
     longitude: 172.6362,
   },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "17:00",
-    },
-  ],
   priceRange: "$$",
   image: "https://www.benchilds.co.nz/images/hero-1.jpg",
   sameAs: [

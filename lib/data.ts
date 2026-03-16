@@ -4,13 +4,6 @@ export const siteConfig = {
   email: "contact@benchilds.co.nz",
   phone: "+64273495184",
   address: "Christchurch, Canterbury, New Zealand",
-  hours: [
-    { day: "Mon", hours: "8am - 5pm" },
-    { day: "Tue", hours: "8am - 5pm" },
-    { day: "Wed", hours: "8am - 5pm" },
-    { day: "Thu", hours: "8am - 5pm" },
-    { day: "Fri", hours: "8am - 5pm" },
-  ],
   imdb: "https://www.imdb.com/name/nm5188866/",
   linkedin: "https://www.linkedin.com/in/ben-childs-nz/",
   // Replace this with your actual Google Form embed URL

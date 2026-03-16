@@ -71,16 +71,10 @@ export default function Ventures() {
 
       {/* Contact details */}
       <section className="py-16 px-6">
-        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-gray-600">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-600">
           <div>
             <p className="font-semibold text-gray-900 mb-1">Location</p>
             <p>{siteConfig.address}</p>
-          </div>
-          <div>
-            <p className="font-semibold text-gray-900 mb-1">Hours</p>
-            {siteConfig.hours.map((h) => (
-              <p key={h.day}>{h.day} {h.hours}</p>
-            ))}
           </div>
           <div>
             <p className="font-semibold text-gray-900 mb-1">Contact</p>
