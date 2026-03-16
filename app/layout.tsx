@@ -75,10 +75,8 @@ const structuredData = {
   email: "contact@benchilds.co.nz",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Navarra Road",
     addressLocality: "Christchurch",
     addressRegion: "Canterbury",
-    postalCode: "8025",
     addressCountry: "NZ",
   },
   geo: {

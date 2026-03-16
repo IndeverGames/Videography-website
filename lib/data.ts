@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Christchurch Videography",
   email: "contact@benchilds.co.nz",
   phone: "+64273495184",
-  address: "Navarra Road, Christchurch, Canterbury, 8025, New Zealand",
+  address: "Christchurch, Canterbury, New Zealand",
   hours: [
     { day: "Mon", hours: "8am - 5pm" },
     { day: "Tue", hours: "8am - 5pm" },
