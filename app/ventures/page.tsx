@@ -3,8 +3,9 @@ import Image from "next/image";
 import { ventures, credentialsBio, siteConfig } from "@/lib/data";
 
 export const metadata = {
-  title: "Ventures — Ben Childs",
-  description: "Ben Childs is a Christchurch-based videographer, filmmaker, actor, and interactive media developer.",
+  title: "About — Christchurch Videographer Ben Childs",
+  description: "Ben Childs is an award-winning Christchurch videographer and filmmaker with 10+ years experience in affordable video production, film, acting, and interactive media.",
+  alternates: { canonical: "https://www.benchilds.co.nz/ventures" },
 };
 
 export default function Ventures() {

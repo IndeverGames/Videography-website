@@ -3,8 +3,9 @@ import Link from "next/link";
 import { actingCredits, siteConfig } from "@/lib/data";
 
 export const metadata = {
-  title: "Acting — Ben Childs",
-  description: "Ben Childs is an experienced actor with speaking roles in three feature films and extensive theatre credits.",
+  title: "Acting — Ben Childs, Christchurch Actor & Director",
+  description: "Ben Childs is a Christchurch-based actor and director with speaking roles in three feature films and extensive New Zealand theatre credits.",
+  alternates: { canonical: "https://www.benchilds.co.nz/acting" },
 };
 
 export default function Acting() {

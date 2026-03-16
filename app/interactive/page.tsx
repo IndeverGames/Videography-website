@@ -3,8 +3,9 @@ import Link from "next/link";
 import { interactiveProjects, siteConfig } from "@/lib/data";
 
 export const metadata = {
-  title: "Interactive — Ben Childs",
-  description: "Interactive games and apps by Ben Childs, built with Unity.",
+  title: "Interactive — Games & Apps by Ben Childs",
+  description: "Interactive games and apps developed by Ben Childs, Christchurch creative professional. Built with Unity, available on Steam, Google Play, and iOS.",
+  alternates: { canonical: "https://www.benchilds.co.nz/interactive" },
 };
 
 export default function Interactive() {

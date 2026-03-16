@@ -3,8 +3,9 @@ import Image from "next/image";
 import { services, equipment, softwareNote, valueProps, testimonials, soloFilmingQuote, pricingNote, portfolioVideos } from "@/lib/data";
 
 export const metadata = {
-  title: "Prices — Ben Childs Videography",
-  description: "Transparent videography pricing in Christchurch. Filming and editing packages to suit any budget.",
+  title: "Affordable Videography Prices in Christchurch, NZ",
+  description: "Transparent, affordable videography pricing in Christchurch, New Zealand. Filming from $400, editing from $100. Best value video production in Christchurch.",
+  alternates: { canonical: "https://www.benchilds.co.nz/videography" },
 };
 
 export default function Prices() {
