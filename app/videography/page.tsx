@@ -1,33 +1,76 @@
 import Link from "next/link";
 import Image from "next/image";
 import { services, equipment, softwareNote, valueProps, testimonials, soloFilmingQuote, pricingNote, portfolioVideos } from "@/lib/data";
+import AnimateIn from "@/components/AnimateIn";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "Affordable Videography Prices in Christchurch, NZ",
-  description: "Transparent, affordable videography pricing in Christchurch, New Zealand. Filming from $400, editing from $100. Best value video production in Christchurch.",
+  description: "Transparent, affordable videography pricing in Christchurch, NZ. Filming from $400, editing from $100. Best value video production in Chch — no hidden costs.",
   alternates: { canonical: "https://www.benchilds.co.nz/videography" },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How much does a videographer cost in Christchurch?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ben Childs offers some of the best value videography in Christchurch. A mini shoot (up to 2 hours) starts at $480, a half day at $650, and a full day at $1000. Editing starts from $100 for raw footage delivery.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the best value video production in Chch?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Ben Childs Videography offers transparent, affordable pricing with no hidden costs. With 10+ years of experience and award-winning work, you get professional quality at unbeatable prices in Christchurch.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer affordable corporate video in Christchurch?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Ben Childs provides affordable corporate video production across Christchurch and Canterbury. Services include filming, editing, testimonials, product videos, and more — all at transparent, fixed prices.",
+      },
+    },
+  ],
 };
 
 export default function Prices() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-          Videography Services
+          Affordable Videography in CHCH
         </h1>
+        <p className="text-gray-300 max-w-xl mx-auto text-lg">
+          Best value video production in Christchurch.
+        </p>
       </section>
 
       {/* Why choose */}
-      <section className="py-20 px-6">
+      <section className="pt-10 pb-20 px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-8">Why choose me for your video?</h2>
           <ul className="flex flex-col gap-4">
             {valueProps.map((vp, i) => (
-              <li key={i} className="flex items-center gap-3 text-lg">
-                <span className="text-green-500">✅</span>
-                <span dangerouslySetInnerHTML={{ __html: vp.replace("Best", "<strong>Best</strong>") }} />
-              </li>
+              <AnimateIn key={i} delay={i * 120}>
+                <li className="flex items-center gap-3 text-lg">
+                  <span className="text-green-500">✅</span>
+                  <span dangerouslySetInnerHTML={{ __html: vp.replace("Best", "<strong>Best</strong>") }} />
+                </li>
+              </AnimateIn>
             ))}
           </ul>
         </div>
@@ -36,7 +79,8 @@ export default function Prices() {
       {/* Pricing */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-14">Pricing</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Pricing</h2>
+          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-14">I provide transparent, affordable pricing for when you need quality video without the expense and drama of a full production crew.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {services.map((service) => (
               <div key={service.category}>
@@ -75,16 +119,11 @@ export default function Prices() {
           </p>
           <p className="text-gray-500 mb-8">
             Need to know more?{" "}
-            <Link href="/about" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+            <Link href="/credentials" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
               Read about my background.
             </Link>
           </p>
-          <Link
-            href="/#contact"
-            className="inline-block px-8 py-3 bg-gray-950 text-white font-semibold rounded-full hover:bg-gray-800 transition-colors"
-          >
-            Get in Touch
-          </Link>
+          <ContactForm />
         </div>
       </section>
 

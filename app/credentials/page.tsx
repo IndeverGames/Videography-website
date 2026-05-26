@@ -1,0 +1,97 @@
+import Image from "next/image";
+import { credentialsBio, testimonials } from "@/lib/data";
+import CredentialsCTA from "@/components/CredentialsCTA";
+
+export const metadata = {
+  title: "Credentials — Ben Childs Christchurch Videographer",
+  description: "Award-winning filmmaker, 10+ years experience, Outstanding Student at the NZ Film and Television School. Ben Childs' full credentials and client testimonials.",
+  alternates: { canonical: "https://www.benchilds.co.nz/credentials" },
+};
+
+const awards = [
+  { title: "Outstanding Student Award", body: "The New Zealand Film and Television School — selected director for the graduation short film." },
+  { title: "Best Foreign Film", body: "IndieFest USA — Birdsong (2013), the first NZFTVS film to receive international recognition." },
+  { title: "Special Jury Award Nomination", body: "Show Me Shorts — Space Trash Men (2015), with pay-per-view deals including TVNZ on demand." },
+  { title: "Christchurch Runner-up", body: "48 Hours Film Competition — Supernova (2012)." },
+];
+
+export default function Credentials() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative py-32 px-6 bg-gray-950 text-white text-center overflow-hidden">
+        <Image
+          src="/images/hero-2.jpg"
+          alt="Ben Childs"
+          fill
+          className="object-cover object-top opacity-30"
+        />
+        <div className="relative z-10 max-w-2xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">Ben Childs · Christchurch, NZ</p>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">My Credentials</h1>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            Award-winning filmmaker, experienced videographer, and creative professional based in Christchurch, New Zealand.
+          </p>
+        </div>
+      </section>
+
+      {/* Bio */}
+      <section className="py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-10">About me</h2>
+          <div className="space-y-5 text-gray-700 leading-relaxed text-lg">
+            {credentialsBio.split("\n\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-14">What clients say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transition-transform duration-200 md:hover:scale-[1.02] md:hover:shadow-md">
+                <p className="text-gray-700 text-lg leading-relaxed mb-6">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CredentialsCTA />
+
+      {/* Trusted by */}
+      <section className="py-16 px-6 border-b border-gray-100">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-widest text-gray-500 mb-8">Trusted by</p>
+          <Image
+            src="/images/client-logos.png"
+            alt="Clients including Storypark, Fire and Emergency NZ, Beagle Innovations"
+            width={700}
+            height={120}
+            className="mx-auto opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300 cursor-default"
+          />
+        </div>
+      </section>
+
+      {/* Awards */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-10">Awards & recognition</h2>
+          <div className="flex flex-col gap-6">
+            {awards.map((a) => (
+              <div key={a.title} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                <h3 className="font-bold text-lg mb-2">{a.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{a.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

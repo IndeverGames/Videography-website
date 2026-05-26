@@ -1,55 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import { testimonials, siteConfig } from "@/lib/data";
+import ContactForm from "@/components/ContactForm";
+import HomeHero from "@/components/HomeHero";
+
+export const metadata = {
+  title: "Ben Childs — Affordable Videographer in Christchurch, NZ",
+  description: "Christchurch's best value videographer. Professional video production from $400 — filming, editing, and corporate video across Christchurch and Canterbury, NZ.",
+  alternates: { canonical: "https://www.benchilds.co.nz" },
+};
 
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6 text-white overflow-hidden">
-        <Image
-          src="/images/hero-1.jpg"
-          alt="Ben Childs on set"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gray-950/70" />
-        <div className="relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-            Christchurch Videography
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mb-4">
-            Professional, engaging videos at{" "}
-            <Link href="/videography" className="underline underline-offset-4 hover:text-white transition-colors">
-              unbeatable prices
-            </Link>
-            .
-          </p>
-          <p className="text-lg text-gray-300 max-w-xl mb-10">
-            I exceed client expectations with beautiful and effective video content, making the process simple, efficient and enjoyable.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/videography"
-              className="px-8 py-3 bg-white text-gray-950 font-semibold rounded-full hover:bg-gray-100 transition-colors"
-            >
-              View Prices
-            </Link>
-            <a
-              href="#contact"
-              className="px-8 py-3 border border-white/30 text-white font-semibold rounded-full hover:border-white transition-colors"
-            >
-              Get in Touch
-            </a>
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       {/* Client logos */}
       <section className="py-16 px-6 border-b border-gray-100">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-xs uppercase tracking-widest text-gray-400 mb-8">
+          <p className="text-xs uppercase tracking-widest text-gray-500 mb-8">
             Trusted by
           </p>
           <Image
@@ -57,7 +26,7 @@ export default function Home() {
             alt="Clients including Storypark, Fire and Emergency NZ, Beagle Innovations"
             width={700}
             height={120}
-            className="mx-auto opacity-60"
+            className="mx-auto opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300 cursor-default"
           />
         </div>
       </section>
@@ -72,7 +41,7 @@ export default function Home() {
             {testimonials.slice(0, 4).map((t, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transition-transform duration-200 md:hover:scale-[1.02] md:hover:shadow-md"
               >
                 <p className="text-gray-700 text-lg leading-relaxed mb-6">
                   &ldquo;{t.quote}&rdquo;
@@ -83,6 +52,11 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="text-center mt-10">
+            <Link href="/credentials" className="text-sm font-semibold text-gray-500 hover:text-gray-900 transition-colors underline underline-offset-4">
+              Read more testimonials
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -92,28 +66,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-10">
             Let&apos;s chat about your project today
           </h2>
-          <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
-            <iframe
-              src={siteConfig.googleFormEmbed}
-              width="100%"
-              height="993"
-              frameBorder="0"
-              marginHeight={0}
-              marginWidth={0}
-              title="Contact form"
-            >
-              Loading…
-            </iframe>
-          </div>
-          <p className="mt-6 text-sm text-gray-400">
-            Prefer to email?{" "}
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="text-gray-900 underline underline-offset-4 hover:text-gray-600 transition-colors"
-            >
-              {siteConfig.email}
-            </a>
-          </p>
+          <ContactForm />
         </div>
       </section>
     </>

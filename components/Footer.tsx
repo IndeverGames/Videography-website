@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <p className="text-white font-semibold mb-2">Ben Childs</p>
-            <p className="text-sm">Christchurch Videography</p>
+            <p className="text-sm">Christchurch Affordable Videography</p>
           </div>
 
           {/* Links */}
@@ -17,7 +17,9 @@ export default function Footer() {
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <Link href="/videography" className="hover:text-white transition-colors">Prices</Link>
             <Link href="/films" className="hover:text-white transition-colors">Films</Link>
+            <Link href="/interactive" className="hover:text-white transition-colors">Interactive</Link>
             <Link href="/about" className="hover:text-white transition-colors">Ventures</Link>
+            <Link href="/credentials" className="hover:text-white transition-colors">Credentials</Link>
           </div>
 
           {/* Contact */}

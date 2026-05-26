@@ -41,7 +41,7 @@ export default function Films() {
               <div className="mt-4 px-1">
                 <div className="flex items-baseline justify-between gap-4">
                   <h2 className="text-xl font-bold">{film.title}</h2>
-                  <span className="text-sm text-gray-400 flex-shrink-0">{film.year}</span>
+                  <span className="text-sm text-gray-500 flex-shrink-0">{film.year}</span>
                 </div>
                 {film.award && (
                   <p className="text-sm text-gray-500 mt-1">{film.award}</p>

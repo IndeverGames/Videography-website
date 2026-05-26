@@ -40,7 +40,7 @@ export default function Acting() {
                   <p className="font-semibold">{credit.title}</p>
                   <p className="text-sm text-gray-500">{credit.type} — {credit.role}</p>
                 </div>
-                <span className="text-sm text-gray-400 flex-shrink-0">{credit.year}</span>
+                <span className="text-sm text-gray-500 flex-shrink-0">{credit.year}</span>
               </div>
             ))}
           </div>
@@ -72,7 +72,7 @@ export default function Acting() {
                   <p className="font-semibold">{credit.title}</p>
                   <p className="text-sm text-gray-500">{credit.role} — {credit.company}</p>
                 </div>
-                <span className="text-sm text-gray-400 flex-shrink-0">{credit.year}</span>
+                <span className="text-sm text-gray-500 flex-shrink-0">{credit.year}</span>
               </div>
             ))}
           </div>
@@ -93,7 +93,7 @@ export default function Acting() {
       </section>
 
       <div className="py-6 px-6 text-center">
-        <Link href="/about" className="text-sm text-gray-400 hover:text-gray-900 transition-colors">
+        <Link href="/about" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
           ← Back to Ventures
         </Link>
       </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ventures, credentialsBio, siteConfig } from "@/lib/data";
+import { ventures, siteConfig } from "@/lib/data";
 
 export const metadata = {
   title: "About — Christchurch Videographer Ben Childs",
@@ -39,33 +39,6 @@ export default function Ventures() {
               </div>
             </Link>
           ))}
-        </div>
-      </section>
-
-      {/* Credentials / bio */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8">My credentials</h2>
-          <div className="space-y-4 text-gray-700 leading-relaxed">
-            {credentialsBio.split("\n\n").map((para, i) => (
-              <p key={i}>{para}</p>
-            ))}
-          </div>
-
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/videography"
-              className="px-8 py-3 bg-gray-950 text-white font-semibold rounded-full hover:bg-gray-800 transition-colors text-center"
-            >
-              View Prices
-            </Link>
-            <Link
-              href="/#contact"
-              className="px-8 py-3 border border-gray-300 text-gray-900 font-semibold rounded-full hover:border-gray-900 transition-colors text-center"
-            >
-              Get in Touch
-            </Link>
-          </div>
         </div>
       </section>
 

@@ -19,3 +19,29 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards;
+}
+
+html.navigating .animate-fade-up {
+  animation-play-state: paused;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-250 { animation-delay: 0.25s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-550 { animation-delay: 0.55s; }
+.delay-700 { animation-delay: 0.7s; }
+
+@keyframes scrollDrop {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  30%  { opacity: 1; }
+  100% { transform: translateY(250%); opacity: 0; }
+}

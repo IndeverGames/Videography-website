@@ -3,6 +3,7 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const geist = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,14 @@ export const metadata: Metadata = {
     "Christchurch videography",
     "corporate video Christchurch",
     "video production NZ",
+    "best value videographer Christchurch",
+    "affordable videography chch",
+    "cheap videographer Christchurch",
+    "video production chch",
+    "chch videographer",
+    "Canterbury videographer",
+    "affordable video chch",
+    "best value video production NZ",
   ],
   authors: [{ name: "Ben Childs" }],
   creator: "Ben Childs",
@@ -86,6 +95,24 @@ const structuredData = {
   },
   priceRange: "$$",
   image: "https://www.benchilds.co.nz/images/hero-1.jpg",
+  serviceArea: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: -43.5321,
+      longitude: 172.6362,
+    },
+    geoRadius: "100000",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Videography Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Full Day Shoot" }, price: "1000", priceCurrency: "NZD" },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Half Day Shoot" }, price: "650", priceCurrency: "NZD" },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mini Shoot" }, price: "480", priceCurrency: "NZD" },
+    ],
+  },
   sameAs: [
     "https://www.imdb.com/name/nm5188866/",
     "https://www.linkedin.com/in/ben-childs-nz/",
@@ -106,6 +133,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geist.variable} font-sans antialiased bg-white text-gray-900`}>
+        <ScrollToTop />
         <Nav />
         <main className="pt-16">{children}</main>
         <Footer />

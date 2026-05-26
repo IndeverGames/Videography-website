@@ -4,7 +4,7 @@ export const siteConfig = {
   email: "contact@benchilds.co.nz",
   phone: "+64273495184",
   address: "Christchurch, Canterbury, New Zealand",
-  imdb: "https://www.imdb.com/name/nm5188866/",
+  imdb: "https://www.imdb.com/name/nm3923114/",
   linkedin: "https://www.linkedin.com/in/ben-childs-nz/",
   // Replace this with your actual Google Form embed URL
   googleFormEmbed:
@@ -23,12 +23,12 @@ export const services = [
       {
         name: "Half Day Shoot",
         description: "Me and the gear for up to 4hrs filming.",
-        price: "$600",
+        price: "$650",
       },
       {
         name: "Mini Shoot",
         description: "Me. The gear. Up to 2hrs.",
-        price: "$400",
+        price: "$480",
       },
     ],
   },
@@ -157,7 +157,7 @@ I was awarded the Outstanding Student award at The New Zealand Film and Televisi
 
 Aside from my videography work in Christchurch, I am a husband and a dad to two daughters. In spare moments I am learning how to program in C# and use the Unity game engine to create my own interactive artworks. And I'm always writing, be it screenplays or stories for my daughters.
 
-I have released my first videogame (Super Mayor) on Steam, two apps on iOS, and one on Google Play. I recently returned from Cologne, Germany where I pitched my next game Davy Jones' Deckhand at Gamescom, the world's largest gaming convention. I will also be exhibiting this project at PAX Australia in October 2025.`;
+I have released my first videogame (Super Mayor) on Steam, two apps on iOS, and one on Google Play. In 2025 I went to Cologne, Germany to pitch my next game Davy Jones' Deckhand at Gamescom, the world's largest gaming convention. I also exhibited this project at PAX Australia.`;
 
 export const portfolioVideos = [
   { title: "Storypark Recruitment Video", embedUrl: "https://player.vimeo.com/video/706020899", platform: "vimeo" as const },
@@ -254,12 +254,22 @@ export const actingCredits = {
 
 export const interactiveProjects = [
   {
+    title: "Davy Jones' Deckhand",
+    description: "My current passion project. In 2024 I founded Cass Bay Games and we're working on our first title, Davy Jones' Deckhand. It's a strategic pirate adventure with a nostalgic, Tintin-esque art style and a free demo you can check out right now on Steam.",
+    image: "/images/interactive-djd.png",
+    links: [
+      { label: "Learn more", href: "/interactive/davy-jones-deckhand" },
+      { label: "Play demo", href: "https://store.steampowered.com/app/4538750/Davy_Jones_Deckhand_Demo/?utm_source=benchilds.co.nz&utm_medium=website&utm_campaign=davy-jones-deckhand" },
+    ],
+  },
+  {
     title: "Super Mayor",
     description:
       "A feel-good 2D platformer / metroidvania where you play as a councillor to a rural farming district in New Zealand! Solve problems, meet the public, and become MAYOR in this hilarious, story-rich adventure.",
     image: "/images/interactive-super-mayor.gif",
     links: [
-      { label: "Play it free now on Windows & Mac!", href: "https://store.steampowered.com" },
+      { label: "Learn more", href: "/interactive/super-mayor" },
+      { label: "Play free on Steam", href: "https://store.steampowered.com/app/2534930/Super_Mayor/?utm_source=benchilds.co.nz&utm_medium=website&utm_campaign=super-mayor" },
     ],
   },
   {
@@ -268,15 +278,19 @@ export const interactiveProjects = [
       "Warning this demo is extremely high in carbohydrates! You're a lump of bread dough, fallen from grace into a world of baked goods. Your life mission is to find an oven and get baked. Split, squish and puzzle your way to redemption in this whimsical adventure.",
     image: "/images/interactive-dough.png",
     links: [
-      { label: "Download on Google Play", href: "https://play.google.com" },
+      { label: "Learn more", href: "/interactive/dough-get-baked" },
     ],
+    note: "This prototype is no longer available on Google Play.",
   },
   {
     title: "Interactive Toddler",
     description:
       "Pitched just right for your child. This digital toy is lovingly created by a real dad for his 18 month old daughter. Pop bubbles, wave at the cow, help the sheep kick a ball, and listen to the peaceful countryside sounds as a pig flies lazily on by.",
     image: "/images/interactive-toddler.png",
-    links: [],
+    imageClassName: "object-cover scale-150",
+    links: [
+      { label: "Learn more", href: "/interactive/interactive-toddler" },
+    ],
     note: "This prototype is no longer available on the App store.",
   },
 ];

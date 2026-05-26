@@ -4,13 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { siteConfig } from "@/lib/data";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/videography", label: "Prices" },
   { href: "/films", label: "Films" },
+  { href: "/interactive", label: "Interactive" },
   { href: "/about", label: "Ventures" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -38,7 +39,7 @@ export default function Nav() {
               key={link.href}
               href={link.href}
               className={`text-sm font-medium transition-colors ${
-                pathname === link.href
+                pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
                   ? "text-gray-900"
                   : "text-gray-500 hover:text-gray-900"
               }`}
@@ -46,30 +47,6 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
-          <div className="flex items-center gap-4 ml-4 pl-4 border-l border-gray-200">
-            <a
-              href={siteConfig.imdb}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-semibold text-gray-500 hover:text-gray-900 transition-colors uppercase tracking-wider"
-            >
-              IMDb
-            </a>
-            <a
-              href={siteConfig.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs font-semibold text-gray-500 hover:text-gray-900 transition-colors uppercase tracking-wider"
-            >
-              LinkedIn
-            </a>
-            <a
-              href={`mailto:${siteConfig.email}`}
-              className="text-xs font-semibold text-gray-500 hover:text-gray-900 transition-colors uppercase tracking-wider"
-            >
-              Email
-            </a>
-          </div>
         </div>
 
         {/* Mobile menu button */}
@@ -101,11 +78,6 @@ export default function Nav() {
               {link.label}
             </Link>
           ))}
-          <div className="flex gap-4 pt-2 border-t border-gray-100">
-            <a href={siteConfig.imdb} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 uppercase tracking-wider">IMDb</a>
-            <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 uppercase tracking-wider">LinkedIn</a>
-            <a href={`mailto:${siteConfig.email}`} className="text-xs text-gray-500 uppercase tracking-wider">Email</a>
-          </div>
         </div>
       )}
     </header>
