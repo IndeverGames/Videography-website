@@ -136,10 +136,11 @@ export default function Prices() {
               <div key={video.embedUrl}>
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-200 shadow-sm">
                   <iframe
-                    src={video.embedUrl}
+                    src={video.platform === "youtube" ? video.embedUrl.replace("www.youtube.com", "www.youtube-nocookie.com") : video.embedUrl}
                     title={video.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    referrerPolicy="strict-origin-when-cross-origin"
                     className="absolute inset-0 w-full h-full"
                   />
                 </div>

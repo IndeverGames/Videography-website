@@ -29,10 +29,11 @@ export default function Films() {
               {/* Video embed */}
               <div className="relative w-full aspect-video bg-gray-100 rounded-2xl overflow-hidden shadow-sm">
                 <iframe
-                  src={film.embedUrl}
+                  src={film.platform === "youtube" ? film.embedUrl.replace("www.youtube.com", "www.youtube-nocookie.com") : film.embedUrl}
                   title={film.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
                   className="absolute inset-0 w-full h-full"
                 />
               </div>
