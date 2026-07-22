@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import ScreenshotLightbox from "@/components/ScreenshotLightbox";
+import TrailerButton from "@/components/TrailerButton";
+
+const TRAILER_VIDEO_ID = "TTH50hzZIWU";
 
 export const metadata = {
   title: "Davy Jones' Deckhand — Ben Childs",
@@ -78,6 +81,11 @@ export default function DavyJonesDeckhand() {
           Parry and counter-attack your way into legend in this swashbuckling roguelike deckbuilder.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+          <TrailerButton
+            videoId={TRAILER_VIDEO_ID}
+            title="Davy Jones' Deckhand — Trailer"
+            className="px-8 py-3 border border-white/30 text-white font-semibold rounded-full hover:border-white transition-colors"
+          />
           <a href={STEAM_DEMO_URL} target="_blank" rel="noopener noreferrer"
             className="px-8 py-3 bg-white text-gray-950 font-semibold rounded-full hover:bg-gray-100 transition-colors">
             Play demo on Steam
