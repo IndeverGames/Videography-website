@@ -14,7 +14,9 @@ export default function DvdServices() {
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-          DVD burning/duplication in Christchurch, New Zealand
+          DVD burning/duplication
+          <br />
+          in Christchurch, New Zealand
         </h1>
       </section>
 
@@ -36,11 +38,19 @@ export default function DvdServices() {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-10">Pricing</h2>
-          <div className="rounded-2xl p-8 border border-gray-100 shadow-sm bg-white text-center">
-            <p className="font-bold text-5xl tracking-tight">$100 <span className="text-2xl font-semibold text-gray-500">+ GST</span></p>
-            <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mt-1 mb-6">Per Project</p>
-            <p className="text-gray-700 leading-relaxed text-left">
-              Includes authoring a simple DVD home menu with a play button, 2x DVD&apos;s burned on quality Verbatim discs with jewel cases, and additional copies for $10 each. Does not include customised disc or case artwork.
+          <div className="rounded-2xl p-8 border border-gray-100 shadow-sm bg-white">
+            <div className="grid grid-cols-2 gap-4 text-center pb-8 mb-8 border-b border-gray-100">
+              <div>
+                <p className="font-bold text-4xl tracking-tight">$100 <span className="text-lg font-semibold text-gray-500">+ GST</span></p>
+                <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mt-1">Per Project</p>
+              </div>
+              <div>
+                <p className="font-bold text-4xl tracking-tight">+$10</p>
+                <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mt-1">Per Additional Copy</p>
+              </div>
+            </div>
+            <p className="text-gray-700 leading-relaxed">
+              Includes authoring a simple DVD home menu with a play button, and 2x DVD&apos;s burned on quality Verbatim discs with jewel cases. Does not include customised disc or case artwork.
             </p>
           </div>
         </div>
