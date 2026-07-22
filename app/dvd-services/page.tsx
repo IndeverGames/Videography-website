@@ -36,9 +36,11 @@ export default function DvdServices() {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-10">Pricing</h2>
-          <div className="rounded-2xl p-8 border border-gray-100 shadow-sm bg-white">
-            <p className="text-gray-700 leading-relaxed">
-              $100 + GST per project. This includes authoring a simple DVD home menu with a play button. 2x DVD&apos;s burned on quality Verbatim discs with jewel cases. Additional copies of the same project can be added on for $10 each. My service does not include customised disc or case artwork.
+          <div className="rounded-2xl p-8 border border-gray-100 shadow-sm bg-white text-center">
+            <p className="font-bold text-5xl tracking-tight">$100 <span className="text-2xl font-semibold text-gray-500">+ GST</span></p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-gray-500 mt-1 mb-6">Per Project</p>
+            <p className="text-gray-700 leading-relaxed text-left">
+              Includes authoring a simple DVD home menu with a play button, 2x DVD&apos;s burned on quality Verbatim discs with jewel cases, and additional copies for $10 each. Does not include customised disc or case artwork.
             </p>
           </div>
         </div>
