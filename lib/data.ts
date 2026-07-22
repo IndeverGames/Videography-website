@@ -5,7 +5,7 @@ export const siteConfig = {
   phone: "+64273495184",
   address: "Christchurch, Canterbury, New Zealand",
   imdb: "https://www.imdb.com/name/nm3923114/",
-  linkedin: "https://www.linkedin.com/in/ben-childs-nz/",
+  linkedin: "https://www.linkedin.com/in/benchildsnz",
   // Replace this with your actual Google Form embed URL
   googleFormEmbed:
     "https://docs.google.com/forms/d/e/1FAIpQLScRt0tzC55m573k1qXHgihtpT2TTibPaowhh6gqUFAmCgLxrw/viewform?embedded=true",

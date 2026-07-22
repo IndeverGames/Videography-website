@@ -24,7 +24,7 @@ export default function Credentials() {
           src="/images/hero-2.jpg"
           alt="Ben Childs"
           fill
-          className="object-cover object-top opacity-30"
+          className="object-cover object-bottom opacity-30"
         />
         <div className="relative z-10 max-w-2xl mx-auto">
           <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">Ben Childs · Christchurch, NZ</p>

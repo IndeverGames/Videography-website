@@ -115,7 +115,7 @@ const structuredData = {
   },
   sameAs: [
     "https://www.imdb.com/name/nm3923114/",
-    "https://www.linkedin.com/in/ben-childs-nz/",
+    "https://www.linkedin.com/in/benchildsnz",
   ],
 };
 
