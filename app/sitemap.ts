@@ -11,5 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/about`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/acting`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${siteUrl}/interactive`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${siteUrl}/dvd-services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.5 },
   ];
 }
