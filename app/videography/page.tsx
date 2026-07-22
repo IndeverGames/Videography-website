@@ -138,7 +138,7 @@ export default function Prices() {
               href="/portfolio"
               className="inline-block px-8 py-3 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-700 transition-colors"
             >
-              See more
+              See portfolio
             </Link>
           </div>
         </div>
