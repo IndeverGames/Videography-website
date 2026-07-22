@@ -16,7 +16,7 @@ export default function Portfolio() {
         </p>
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">Portfolio</h1>
         <p className="text-gray-300 max-w-lg mx-auto text-lg">
-          Corporate, promotional, and testimonial video production for clients across Christchurch.
+          Corporate, promotional, and testimonial video production for clients across Christchurch and around New Zealand.
         </p>
       </section>
 
