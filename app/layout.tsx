@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import { ViewTransitions } from "next-view-transitions";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -126,21 +125,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ViewTransitions>
-      <html lang="en-NZ">
-        <head>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-          />
-        </head>
-        <body className={`${geist.variable} font-sans antialiased bg-white text-gray-900`}>
-          <ScrollToTop />
-          <Nav />
-          <main className="pt-16">{children}</main>
-          <Footer />
-        </body>
-      </html>
-    </ViewTransitions>
+    <html lang="en-NZ">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
+      <body className={`${geist.variable} font-sans antialiased bg-white text-gray-900`}>
+        <ScrollToTop />
+        <Nav />
+        <main className="pt-16">{children}</main>
+        <Footer />
+      </body>
+    </html>
   );
 }
