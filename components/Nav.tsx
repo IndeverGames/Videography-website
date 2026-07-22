@@ -25,9 +25,9 @@ export default function Nav() {
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.svg"
             alt="Ben Childs"
-            width={120}
+            width={137}
             height={40}
             className="h-8 w-auto"
           />
