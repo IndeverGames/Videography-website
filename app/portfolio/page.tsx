@@ -11,9 +11,6 @@ export default function Portfolio() {
     <>
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
-        <p className="text-sm font-semibold uppercase tracking-widest text-gray-400 mb-4">
-          Work
-        </p>
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">Portfolio</h1>
         <p className="text-gray-300 max-w-lg mx-auto text-lg">
           Corporate, promotional, and testimonial video production for clients across Christchurch and around New Zealand.
