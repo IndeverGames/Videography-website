@@ -160,17 +160,17 @@ Aside from my videography work in Christchurch, I am a husband and a dad to two 
 I have released my first videogame (Super Mayor) on Steam, two apps on iOS, and one on Google Play. In 2025 I went to Cologne, Germany to pitch my next game Davy Jones' Deckhand at Gamescom, the world's largest gaming convention. I also exhibited this project at PAX Australia.`;
 
 export const portfolioVideos = [
-  { title: "Storypark Recruitment Video", embedUrl: "https://player.vimeo.com/video/706020899", platform: "vimeo" as const, featured: true },
-  { title: "The Story of Storypark", embedUrl: "https://player.vimeo.com/video/236664132", platform: "vimeo" as const, featured: false },
-  { title: "What Happens When You Call 111 for a Fire", embedUrl: "https://www.youtube.com/embed/klSE3oplB7c", platform: "youtube" as const, featured: true },
-  { title: "Lucky Rover by Lucky Rentals", embedUrl: "https://www.youtube.com/embed/skfbat7_XuA", platform: "youtube" as const, featured: false },
-  { title: "Promotional Video: SMOOCH Dental Spa", embedUrl: "https://www.youtube.com/embed/YbuCCuGYzvE", platform: "youtube" as const, featured: true },
-  { title: "Zaxton's Story", embedUrl: "https://player.vimeo.com/video/649722786", platform: "vimeo" as const, featured: false },
-  { title: "Product Testimonials for Beagle Innovations", embedUrl: "https://player.vimeo.com/video/174053478", platform: "vimeo" as const, featured: false },
-  { title: "Stop-Motion Content Marketing", embedUrl: "https://player.vimeo.com/video/207048269", platform: "vimeo" as const, featured: false },
-  { title: "Staff Profiles for Storypark", embedUrl: "https://player.vimeo.com/video/357274509", platform: "vimeo" as const, featured: false },
-  { title: "Product Support Videos for Storypark", embedUrl: "https://player.vimeo.com/video/98896128", platform: "vimeo" as const, featured: false },
-  { title: "Patient Information Videos — Specialist Vein Health", embedUrl: "https://player.vimeo.com/video/206316687", platform: "vimeo" as const, featured: false },
+  { title: "Storypark Recruitment Video", embedUrl: "https://player.vimeo.com/video/706020899", platform: "vimeo" as const },
+  { title: "The Story of Storypark", embedUrl: "https://player.vimeo.com/video/236664132", platform: "vimeo" as const },
+  { title: "What Happens When You Call 111 for a Fire", embedUrl: "https://www.youtube.com/embed/klSE3oplB7c", platform: "youtube" as const },
+  { title: "Lucky Rover by Lucky Rentals", embedUrl: "https://www.youtube.com/embed/skfbat7_XuA", platform: "youtube" as const },
+  { title: "Promotional Video: SMOOCH Dental Spa", embedUrl: "https://www.youtube.com/embed/YbuCCuGYzvE", platform: "youtube" as const },
+  { title: "Zaxton's Story", embedUrl: "https://player.vimeo.com/video/649722786", platform: "vimeo" as const },
+  { title: "Product Testimonials for Beagle Innovations", embedUrl: "https://player.vimeo.com/video/174053478", platform: "vimeo" as const },
+  { title: "Stop-Motion Content Marketing", embedUrl: "https://player.vimeo.com/video/207048269", platform: "vimeo" as const },
+  { title: "Staff Profiles for Storypark", embedUrl: "https://player.vimeo.com/video/357274509", platform: "vimeo" as const },
+  { title: "Product Support Videos for Storypark", embedUrl: "https://player.vimeo.com/video/98896128", platform: "vimeo" as const },
+  { title: "Patient Information Videos — Specialist Vein Health", embedUrl: "https://player.vimeo.com/video/206316687", platform: "vimeo" as const },
 ];
 
 export const films = [

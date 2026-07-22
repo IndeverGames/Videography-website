@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { services, equipment, softwareNote, valueProps, testimonials, soloFilmingQuote, pricingNote, portfolioVideos } from "@/lib/data";
-
-const featuredPortfolioVideos = portfolioVideos.filter((video) => video.featured);
 import AnimateIn from "@/components/AnimateIn";
 import ContactForm from "@/components/ContactForm";
+import PortfolioCarousel from "@/components/PortfolioCarousel";
 
 export const metadata = {
   title: "Affordable Videography Prices in Christchurch, NZ",
@@ -133,24 +132,8 @@ export default function Prices() {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-14">Examples of my work</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {featuredPortfolioVideos.map((video) => (
-              <div key={video.embedUrl}>
-                <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-200 shadow-sm">
-                  <iframe
-                    src={video.platform === "youtube" ? video.embedUrl.replace("www.youtube.com", "www.youtube-nocookie.com") : video.embedUrl}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    className="absolute inset-0 w-full h-full"
-                  />
-                </div>
-                <p className="mt-3 text-sm font-semibold text-gray-700 px-1">{video.title}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-14">
+          <PortfolioCarousel videos={portfolioVideos} />
+          <div className="text-center mt-4">
             <Link
               href="/portfolio"
               className="inline-block px-8 py-3 rounded-full bg-gray-900 text-white font-semibold hover:bg-gray-700 transition-colors"
