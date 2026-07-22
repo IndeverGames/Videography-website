@@ -12,7 +12,6 @@ export const metadata = {
 };
 
 const STEAM_DEMO_URL = "https://store.steampowered.com/app/4538750/Davy_Jones_Deckhand_Demo/?utm_source=benchilds.co.nz&utm_medium=website&utm_campaign=davy-jones-deckhand";
-const STEAM_URL = "https://store.steampowered.com/app/3544900/Davy_Jones_Deckhand/?utm_source=benchilds.co.nz&utm_medium=website&utm_campaign=davy-jones-deckhand";
 const CDN = "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3544900";
 
 const features = [
@@ -90,10 +89,6 @@ export default function DavyJonesDeckhand() {
             className="px-8 py-3 bg-white text-gray-950 font-semibold rounded-full hover:bg-gray-100 transition-colors">
             Play demo on Steam
           </a>
-          <a href={STEAM_URL} target="_blank" rel="noopener noreferrer"
-            className="px-8 py-3 border border-white/30 text-white font-semibold rounded-full hover:border-white transition-colors">
-            Wishlist on Steam
-          </a>
         </div>
       </section>
 
@@ -159,15 +154,16 @@ export default function DavyJonesDeckhand() {
       {/* CTA */}
       <section className="py-16 px-6 bg-gray-950 text-white text-center">
         <h2 className="text-2xl font-bold mb-4">Free demo available now</h2>
-        <p className="text-gray-400 mb-8 max-w-md mx-auto">Try the demo on Steam — Windows &amp; Mac. Wishlist to follow development.</p>
+        <p className="text-gray-400 mb-8 max-w-md mx-auto">Try the demo on Steam — Windows &amp; Mac.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <TrailerButton
+            videoId={TRAILER_VIDEO_ID}
+            title="Davy Jones' Deckhand — Trailer"
+            className="inline-block px-8 py-3 border border-white/30 text-white font-semibold rounded-full hover:border-white transition-colors"
+          />
           <a href={STEAM_DEMO_URL} target="_blank" rel="noopener noreferrer"
             className="inline-block px-8 py-3 bg-white text-gray-950 font-semibold rounded-full hover:bg-gray-100 transition-colors">
             Play demo on Steam
-          </a>
-          <a href={STEAM_URL} target="_blank" rel="noopener noreferrer"
-            className="inline-block px-8 py-3 border border-white/30 text-white font-semibold rounded-full hover:border-white transition-colors">
-            Wishlist on Steam
           </a>
         </div>
       </section>
