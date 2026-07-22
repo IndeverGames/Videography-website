@@ -54,12 +54,12 @@ export const services = [
     ],
   },
   {
-    category: "DVD Authoring/Duplication",
+    category: "DVD Authoring",
     items: [
       {
         name: "Per Project",
         description:
-          "I can help you with authoring or duplicating Region 4 DVDs. Includes 2x copies. Additional copies are $10 each.",
+          "Includes 2x copies, additional copies are $10 each. Provide me with the video files or original DVD. Region 4 only.",
         price: "$100",
       },
     ],

@@ -3,46 +3,18 @@ import { siteConfig } from "@/lib/data";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "DVD Authoring/Duplication in Christchurch, NZ",
-  description: "I can help you with authoring or duplicating Region 4 DVDs in Christchurch, New Zealand. Per project $100 + GST, includes 2x copies. Additional copies are $10 each.",
+  title: "DVD Burning & Duplication in Christchurch, NZ",
+  description: "Affordable DVD burning and duplication in Christchurch, New Zealand. Burn your video files to disc, or get copies made from an original DVD, from $100 + GST.",
   alternates: { canonical: "https://www.benchilds.co.nz/dvd-services" },
-};
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  serviceType: "DVD Authoring and Duplication",
-  name: "DVD Authoring/Duplication",
-  description: "I can help you with authoring or duplicating Region 4 DVDs in Christchurch, New Zealand.",
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Ben Childs Videography",
-    url: "https://www.benchilds.co.nz",
-  },
-  areaServed: {
-    "@type": "City",
-    name: "Christchurch",
-  },
-  offers: {
-    "@type": "Offer",
-    price: "100",
-    priceCurrency: "NZD",
-    description: "Per project. Includes 2x DVD copies on Verbatim discs with jewel cases. Additional copies are $10 each.",
-  },
 };
 
 export default function DvdServices() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
-
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
-          DVD Authoring/Duplication
+          DVD Burning &amp; Duplication
         </h1>
         <p className="text-gray-300 max-w-xl mx-auto text-lg">
           Affordable DVD services in Christchurch, New Zealand.
@@ -57,7 +29,7 @@ export default function DvdServices() {
           </div>
           <div>
             <p className="text-gray-700 text-lg leading-relaxed mb-4">
-              Not many videographers in Christchurch still offer this service — I do. I can help you with authoring or duplicating Region 4 DVDs. Whether you have an original DVD that needs copying, or video files you&apos;d like burned to disc, I can help.
+              Not many videographers in Christchurch still offer DVD burning and duplication — I do. Whether you have an original DVD that needs copying, or video files you&apos;d like burned to disc, I can help.
             </p>
             <p className="text-gray-500">
               Note: the maximum resolution for DVDs is 720x576 pixels (576p).
