@@ -50,22 +50,18 @@ export default function DvdServices() {
       </section>
 
       {/* Intro */}
-      <section className="pt-20 pb-10 px-6">
-        <div className="max-w-2xl mx-auto text-center">
-          <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            Not many videographers in Christchurch still offer this service — I do. I can help you with authoring or duplicating Region 4 DVDs. Whether you have an original DVD that needs copying, or video files you&apos;d like burned to disc, I can help.
-          </p>
-          <p className="text-gray-500">
-            Note: the maximum resolution for DVDs is 720x576 pixels (576p).
-          </p>
-        </div>
-      </section>
-
-      {/* Image */}
-      <section className="pb-20 px-6">
-        <div className="max-w-xs mx-auto">
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-sm">
             <Image src="/images/DVD+R.webp" alt="DVD-R disc" fill className="object-cover" />
+          </div>
+          <div>
+            <p className="text-gray-700 text-lg leading-relaxed mb-4">
+              Not many videographers in Christchurch still offer this service — I do. I can help you with authoring or duplicating Region 4 DVDs. Whether you have an original DVD that needs copying, or video files you&apos;d like burned to disc, I can help.
+            </p>
+            <p className="text-gray-500">
+              Note: the maximum resolution for DVDs is 720x576 pixels (576p).
+            </p>
           </div>
         </div>
       </section>
