@@ -1,4 +1,5 @@
 import { portfolioVideos } from "@/lib/data";
+import VideoGridLightbox from "@/components/VideoGridLightbox";
 
 export const metadata = {
   title: "Portfolio — Christchurch Videography Work",
@@ -19,23 +20,7 @@ export default function Portfolio() {
 
       {/* Portfolio grid */}
       <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {portfolioVideos.map((video) => (
-            <div key={video.embedUrl}>
-              <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-200 shadow-sm">
-                <iframe
-                  src={video.platform === "youtube" ? video.embedUrl.replace("www.youtube.com", "www.youtube-nocookie.com") : video.embedUrl}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
-              <p className="mt-3 text-sm font-semibold text-gray-700 px-1">{video.title}</p>
-            </div>
-          ))}
-        </div>
+        <VideoGridLightbox videos={portfolioVideos} />
       </section>
     </>
   );
