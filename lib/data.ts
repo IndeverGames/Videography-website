@@ -116,7 +116,27 @@ export const soloFilmingQuote =
   "I've been doing this for more than ten years and have honed the process of solo-filming to a fine art, calmly and effectively performing all the necessary roles at once: director, camera operator, sound recordist, and even interviewer. It's far less intimidating than a full crew, and you'll be amazed at what can be achieved.";
 
 export const testimonials = [
-  // Newest reviews go first — add new entries here at the top, above this line.
+  // First 3 are hand-picked to frontload (per explicit instruction), not auto-sorted by date.
+  {
+    quote:
+      "We cannot recommend Ben Childs Film & Video highly enough! Ben is an absolute professional and did the most incredible job of our video project. Ben was communicative, flexible and very understanding. Our video involved working with a lot of very young children and a load of volunteers who were not used to being on camera. Ben was kind, patient and very easy to work with. The final product is polished and filled our brief exactly. We thoroughly enjoyed working with Ben and would gladly recommend him to anyone.",
+    author: "Lauren Lincoln",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/1dGWFtL1DiEiwGHg7",
+  },
+  {
+    quote:
+      "Smooch Dental Spa recently hired Ben to produce a walk through of our new clinic and a technical video to help patients understand our hygiene process. We absolutely love the results which you can see at our website. We found Ben very professional and a pleasure to work with, he was particularly good at getting everyone to feel at ease in front of the lens and guiding us through our long filming day.",
+    author: "George, Smooch Dental Spa",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/EEdV1y7ZkYuQDKnN7",
+  },
+  {
+    quote:
+      "Ben understands business objectives and consistently creates engaging, outcome focused work. I'm always blown away by Ben's initiative and efficiency, from scoping and budgeting to directing and editing we know we can rely on Ben to pull it all together even with tight time constraints.",
+    author: "Jamie MacDonald, CEO Storypark",
+  },
+  // Newest reviews go here, below the 3 hand-picked ones above — add new entries at the top of this block.
   {
     quote:
       "Got Ben to record (and edit and voice) a number of instructional / training videos. He was amazing, can't stress that enough, made everything so easy and also was great value! Highly recommended.",
@@ -161,20 +181,6 @@ export const testimonials = [
   },
   {
     quote:
-      "Smooch Dental Spa recently hired Ben to produce a walk through of our new clinic and a technical video to help patients understand our hygiene process. We absolutely love the results which you can see at our website. We found Ben very professional and a pleasure to work with, he was particularly good at getting everyone to feel at ease in front of the lens and guiding us through our long filming day.",
-    author: "George, Smooch Dental Spa",
-    rating: 5,
-    googleReviewUrl: "https://maps.app.goo.gl/EEdV1y7ZkYuQDKnN7",
-  },
-  {
-    quote:
-      "We cannot recommend Ben Childs Film & Video highly enough! Ben is an absolute professional and did the most incredible job of our video project. Ben was communicative, flexible and very understanding. Our video involved working with a lot of very young children and a load of volunteers who were not used to being on camera. Ben was kind, patient and very easy to work with. The final product is polished and filled our brief exactly. We thoroughly enjoyed working with Ben and would gladly recommend him to anyone.",
-    author: "Lauren Lincoln",
-    rating: 5,
-    googleReviewUrl: "https://maps.app.goo.gl/1dGWFtL1DiEiwGHg7",
-  },
-  {
-    quote:
       "We hired Ben to film our very simple outdoor elopement, and we couldn't have asked for a better experience. Even though weddings aren't usually his thing, he happily agreed because of our small guest list and short ceremony. Originally we planned a 7:30 am ceremony on Mt. Vernon, then had to shift it to 9:30 am due to weather which he was totally accommodating of…",
     author: "Sankha Maitra",
     rating: 5,
@@ -186,11 +192,6 @@ export const testimonials = [
     author: "Julie Tonkin",
     rating: 5,
     googleReviewUrl: "https://maps.app.goo.gl/2jxFWyYvW9A3RRu76",
-  },
-  {
-    quote:
-      "Ben understands business objectives and consistently creates engaging, outcome focused work. I'm always blown away by Ben's initiative and efficiency, from scoping and budgeting to directing and editing we know we can rely on Ben to pull it all together even with tight time constraints.",
-    author: "Jamie MacDonald, CEO Storypark",
   },
   {
     quote:
