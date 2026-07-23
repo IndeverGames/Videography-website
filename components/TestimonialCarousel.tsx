@@ -19,16 +19,23 @@ function Stars({ rating }: { rating: number }) {
 function Card({ t, className }: { t: Testimonial; className: string }) {
   if (t.googleReviewUrl) {
     return (
-      <a href={t.googleReviewUrl} target="_blank" rel="noopener noreferrer" className={`${className} hover:border-gray-300`}>
+      <div className={className}>
         <div className="flex-1 min-h-0 flex flex-col">
           {t.rating && <Stars rating={t.rating} />}
           <p className="visible-scrollbar text-gray-700 text-lg leading-relaxed overflow-y-auto pr-2 flex-1 min-h-0">&ldquo;{t.quote}&rdquo;</p>
         </div>
         <div className="shrink-0 pt-4">
           <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
-          <p className="text-xs text-gray-400 mt-1 underline underline-offset-2">From Google Review</p>
+          <a
+            href={t.googleReviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-gray-400 mt-1 underline underline-offset-2 hover:text-gray-600 transition-colors inline-block"
+          >
+            From Google Review
+          </a>
         </div>
-      </a>
+      </div>
     );
   }
   return (
@@ -64,13 +71,22 @@ export default function TestimonialCarousel({ testimonials }: { testimonials: Te
   }, [testimonials]);
 
   const scrollByPage = (direction: 1 | -1) => {
-    scrollRef.current?.scrollBy({ left: direction * scrollRef.current.clientWidth * 0.8, behavior: "smooth" });
+    const el = scrollRef.current;
+    if (!el) return;
+    // Loop: if there's nowhere further to scroll in that direction, jump to the other end.
+    if (direction === 1 && !canScrollRight) {
+      el.scrollTo({ left: 0, behavior: "smooth" });
+      return;
+    }
+    if (direction === -1 && !canScrollLeft) {
+      el.scrollTo({ left: el.scrollWidth, behavior: "smooth" });
+      return;
+    }
+    el.scrollBy({ left: direction * el.clientWidth * 0.8, behavior: "smooth" });
   };
 
   // Mobile: deterministic index-based slider (no scroll-snap involved)
   const [activeIndex, setActiveIndex] = useState(0);
-  const atStart = activeIndex === 0;
-  const atEnd = activeIndex === testimonials.length - 1;
 
   return (
     <div className="relative">
@@ -90,19 +106,17 @@ export default function TestimonialCarousel({ testimonials }: { testimonials: Te
         </div>
         <div className="flex items-center justify-center gap-4 mt-6">
           <button
-            onClick={() => setActiveIndex(i => Math.max(i - 1, 0))}
-            disabled={atStart}
+            onClick={() => setActiveIndex(i => (i - 1 + testimonials.length) % testimonials.length)}
             aria-label="Previous testimonial"
-            className="px-6 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold transition-opacity disabled:opacity-30"
+            className="px-6 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold"
           >
             ‹ Previous
           </button>
           <span className="text-xs text-gray-400 tabular-nums">{activeIndex + 1} / {testimonials.length}</span>
           <button
-            onClick={() => setActiveIndex(i => Math.min(i + 1, testimonials.length - 1))}
-            disabled={atEnd}
+            onClick={() => setActiveIndex(i => (i + 1) % testimonials.length)}
             aria-label="Next testimonial"
-            className="px-6 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold transition-opacity disabled:opacity-30"
+            className="px-6 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold"
           >
             Next ›
           </button>
@@ -111,7 +125,7 @@ export default function TestimonialCarousel({ testimonials }: { testimonials: Te
 
       {/* Desktop */}
       <div className="hidden sm:block relative">
-        {canScrollLeft && (
+        {testimonials.length > 1 && (
           <button
             onClick={() => scrollByPage(-1)}
             aria-label="Scroll left"
@@ -120,7 +134,7 @@ export default function TestimonialCarousel({ testimonials }: { testimonials: Te
             ‹
           </button>
         )}
-        {canScrollRight && (
+        {testimonials.length > 1 && (
           <button
             onClick={() => scrollByPage(1)}
             aria-label="Scroll right"
