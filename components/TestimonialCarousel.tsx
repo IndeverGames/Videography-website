@@ -16,7 +16,33 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
+function Card({ t, className }: { t: Testimonial; className: string }) {
+  if (t.googleReviewUrl) {
+    return (
+      <a href={t.googleReviewUrl} target="_blank" rel="noopener noreferrer" className={`${className} hover:border-gray-300`}>
+        <div>
+          {t.rating && <Stars rating={t.rating} />}
+          <p className="text-gray-700 text-lg leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
+        </div>
+        <div>
+          <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
+          <p className="text-xs text-gray-400 mt-1 underline underline-offset-2">From Google Review</p>
+        </div>
+      </a>
+    );
+  }
+  return (
+    <div className={className}>
+      <p className="text-gray-700 text-lg leading-relaxed mb-6 overflow-y-auto">&ldquo;{t.quote}&rdquo;</p>
+      <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
+    </div>
+  );
+}
+
+const CARD_BODY_CLASS = "h-[460px] flex flex-col justify-between bg-white rounded-2xl p-8 shadow-sm border border-gray-100";
+
 export default function TestimonialCarousel({ testimonials }: { testimonials: Testimonial[] }) {
+  // Desktop: horizontal scroll carousel with peek
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -41,59 +67,76 @@ export default function TestimonialCarousel({ testimonials }: { testimonials: Te
     scrollRef.current?.scrollBy({ left: direction * scrollRef.current.clientWidth * 0.8, behavior: "smooth" });
   };
 
+  // Mobile: deterministic index-based slider (no scroll-snap involved)
+  const [activeIndex, setActiveIndex] = useState(0);
+  const atStart = activeIndex === 0;
+  const atEnd = activeIndex === testimonials.length - 1;
+
   return (
     <div className="relative">
-      {canScrollLeft && (
-        <button
-          onClick={() => scrollByPage(-1)}
-          aria-label="Scroll left"
-          className="absolute left-0 sm:left-0 top-1/2 -translate-y-1/2 -translate-x-1 sm:-translate-x-4 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
-        >
-          ‹
-        </button>
-      )}
-      {canScrollRight && (
-        <button
-          onClick={() => scrollByPage(1)}
-          aria-label="Scroll right"
-          className="absolute right-0 sm:right-0 top-1/2 -translate-y-1/2 translate-x-1 sm:translate-x-4 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
-        >
-          ›
-        </button>
-      )}
+      {/* Mobile */}
+      <div className="sm:hidden">
+        <div className="overflow-hidden rounded-2xl">
+          <div
+            className="flex transition-transform duration-300 ease-out"
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+          >
+            {testimonials.map((t, i) => (
+              <div key={i} className="w-full flex-shrink-0">
+                <Card t={t} className={CARD_BODY_CLASS} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center justify-center gap-4 mt-6">
+          <button
+            onClick={() => setActiveIndex(i => Math.max(i - 1, 0))}
+            disabled={atStart}
+            aria-label="Previous testimonial"
+            className="px-6 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold transition-opacity disabled:opacity-30"
+          >
+            ‹ Previous
+          </button>
+          <span className="text-xs text-gray-400 tabular-nums">{activeIndex + 1} / {testimonials.length}</span>
+          <button
+            onClick={() => setActiveIndex(i => Math.min(i + 1, testimonials.length - 1))}
+            disabled={atEnd}
+            aria-label="Next testimonial"
+            className="px-6 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold transition-opacity disabled:opacity-30"
+          >
+            Next ›
+          </button>
+        </div>
+      </div>
 
-      <div ref={scrollRef} className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth px-1 pb-2 -mx-1">
-        {testimonials.map((t, i) => {
-          const cardClass = "flex-shrink-0 snap-center w-full sm:w-[540px] h-[460px] flex flex-col justify-between bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transition-transform duration-200 md:hover:scale-[1.02] md:hover:shadow-md";
+      {/* Desktop */}
+      <div className="hidden sm:block relative">
+        {canScrollLeft && (
+          <button
+            onClick={() => scrollByPage(-1)}
+            aria-label="Scroll left"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
+          >
+            ‹
+          </button>
+        )}
+        {canScrollRight && (
+          <button
+            onClick={() => scrollByPage(1)}
+            aria-label="Scroll right"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
+          >
+            ›
+          </button>
+        )}
 
-          if (t.googleReviewUrl) {
-            return (
-              <a
-                key={i}
-                href={t.googleReviewUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${cardClass} hover:border-gray-300`}
-              >
-                <div>
-                  {t.rating && <Stars rating={t.rating} />}
-                  <p className="text-gray-700 text-lg leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
-                  <p className="text-xs text-gray-400 mt-1 underline underline-offset-2">From Google Review</p>
-                </div>
-              </a>
-            );
-          }
-
-          return (
-            <div key={i} className={cardClass}>
-              <p className="text-gray-700 text-lg leading-relaxed mb-6 overflow-y-auto">&ldquo;{t.quote}&rdquo;</p>
-              <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
+        <div ref={scrollRef} className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth px-1 pb-2 -mx-1">
+          {testimonials.map((t, i) => (
+            <div key={i} className="flex-shrink-0 snap-start w-[540px]">
+              <Card t={t} className={`${CARD_BODY_CLASS} transition-transform duration-200 md:hover:scale-[1.02] md:hover:shadow-md`} />
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );
