@@ -41,7 +41,7 @@ export default function Home() {
           <TestimonialCarousel testimonials={testimonials} />
           <div className="text-center mt-10">
             <Link href="/about" className="text-sm font-semibold text-gray-500 hover:text-gray-900 transition-colors underline underline-offset-4">
-              Read more testimonials
+              Read more about my credentials
             </Link>
           </div>
         </div>
