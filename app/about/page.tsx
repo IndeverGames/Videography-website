@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { credentialsBio, testimonials } from "@/lib/data";
 import AboutCTA from "@/components/AboutCTA";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export const metadata = {
   title: "About — Christchurch Videographer Ben Childs",
@@ -40,7 +41,7 @@ export default function About() {
         <div className="max-w-3xl mx-auto">
           <div className="space-y-5 text-gray-700 leading-relaxed text-lg">
             {credentialsBio.split("\n\n").map((para, i) => (
-              <p key={i}>{para}</p>
+              <p key={i} dangerouslySetInnerHTML={{ __html: para }} />
             ))}
           </div>
         </div>
@@ -50,14 +51,7 @@ export default function About() {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-14">What clients say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((t, i) => (
-              <div key={i} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transition-transform duration-200 md:hover:scale-[1.02] md:hover:shadow-md">
-                <p className="text-gray-700 text-lg leading-relaxed mb-6">&ldquo;{t.quote}&rdquo;</p>
-                <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
-              </div>
-            ))}
-          </div>
+          <TestimonialCarousel testimonials={testimonials} />
         </div>
       </section>
 

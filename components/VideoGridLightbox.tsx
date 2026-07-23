@@ -64,49 +64,58 @@ export default function VideoGridLightbox({ videos }: { videos: Video[] }) {
           className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
           onClick={close}
         >
-          <div className="relative w-full max-w-4xl" onClick={e => e.stopPropagation()}>
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
-              <iframe
-                src={embedSrc(videos[active])}
-                title={videos[active].title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin"
-                className="absolute inset-0 w-full h-full"
-              />
+          <div
+            className="relative"
+            // Target 75% of viewport width, but never let the 16:9 frame (plus
+            // the caption/buttons below it) grow taller than the viewport --
+            // otherwise the top of the video gets pushed off-screen.
+            style={{ width: "min(75vw, calc((90vh - 110px) * 16 / 9))" }}
+            onClick={e => e.stopPropagation()}
+          >
+            {/* Custom dark frame */}
+            <div className="relative bg-gray-950 rounded-2xl p-3 shadow-2xl">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
+                <iframe
+                  src={embedSrc(videos[active])}
+                  title={videos[active].title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+
+              {/* Close */}
+              <button
+                onClick={close}
+                aria-label="Close"
+                className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white text-gray-900 shadow-md flex items-center justify-center hover:bg-gray-100 transition-colors"
+              >
+                ✕
+              </button>
             </div>
 
             <p className="mt-4 text-white/80 text-sm text-center">
               {videos[active].title} — {active + 1} / {videos.length}
             </p>
+
+            <div className="mt-4 flex items-center justify-center gap-4">
+              <button
+                onClick={e => { e.stopPropagation(); prev(); }}
+                className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-colors"
+                aria-label="Previous video"
+              >
+                ‹ Previous
+              </button>
+              <button
+                onClick={e => { e.stopPropagation(); next(); }}
+                className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-colors"
+                aria-label="Next video"
+              >
+                Next ›
+              </button>
+            </div>
           </div>
-
-          {/* Prev */}
-          <button
-            onClick={e => { e.stopPropagation(); prev(); }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-            aria-label="Previous video"
-          >
-            ←
-          </button>
-
-          {/* Next */}
-          <button
-            onClick={e => { e.stopPropagation(); next(); }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-            aria-label="Next video"
-          >
-            →
-          </button>
-
-          {/* Close */}
-          <button
-            onClick={close}
-            className="absolute top-4 right-4 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
-            aria-label="Close"
-          >
-            ✕
-          </button>
         </div>
       )}
     </>
