@@ -20,11 +20,11 @@ function Card({ t, className }: { t: Testimonial; className: string }) {
   if (t.googleReviewUrl) {
     return (
       <a href={t.googleReviewUrl} target="_blank" rel="noopener noreferrer" className={`${className} hover:border-gray-300`}>
-        <div>
+        <div className="flex-1 min-h-0 flex flex-col">
           {t.rating && <Stars rating={t.rating} />}
-          <p className="text-gray-700 text-lg leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
+          <p className="visible-scrollbar text-gray-700 text-lg leading-relaxed overflow-y-auto pr-2 flex-1 min-h-0">&ldquo;{t.quote}&rdquo;</p>
         </div>
-        <div>
+        <div className="shrink-0 pt-4">
           <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
           <p className="text-xs text-gray-400 mt-1 underline underline-offset-2">From Google Review</p>
         </div>
@@ -33,13 +33,13 @@ function Card({ t, className }: { t: Testimonial; className: string }) {
   }
   return (
     <div className={className}>
-      <p className="text-gray-700 text-lg leading-relaxed mb-6 overflow-y-auto">&ldquo;{t.quote}&rdquo;</p>
-      <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
+      <p className="visible-scrollbar text-gray-700 text-lg leading-relaxed overflow-y-auto pr-2 flex-1 min-h-0">&ldquo;{t.quote}&rdquo;</p>
+      <p className="text-sm font-semibold text-gray-500 shrink-0 pt-4">— {t.author}</p>
     </div>
   );
 }
 
-const CARD_BODY_CLASS = "h-[460px] flex flex-col justify-between bg-white rounded-2xl p-8 shadow-sm border border-gray-100";
+const CARD_BODY_CLASS = "h-[320px] sm:h-[460px] flex flex-col justify-between bg-white rounded-2xl p-8 shadow-sm border border-gray-100";
 
 export default function TestimonialCarousel({ testimonials }: { testimonials: Testimonial[] }) {
   // Desktop: horizontal scroll carousel with peek

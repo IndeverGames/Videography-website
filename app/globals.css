@@ -45,3 +45,21 @@ html.navigating .animate-fade-up {
   30%  { opacity: 1; }
   100% { transform: translateY(250%); opacity: 0; }
 }
+
+/* Always-visible scrollbar for overflowing content, so it's obvious
+   there's more to scroll rather than relying on a mobile browser's
+   invisible-until-touched overlay scrollbar. */
+.visible-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+.visible-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.visible-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.visible-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 3px;
+}
