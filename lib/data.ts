@@ -156,6 +156,20 @@ export const testimonials = [
       "Ben takes on responsibility and total care for his assigned duties and one could rely on his total commitment to assigned tasks and responsibilities. Ben is a commendable and valued member in his team and is recognised as a mentor amongst his colleagues and peers.",
     author: "Sashi Meanger, Executive Director, The New Zealand Film and Television School",
   },
+  {
+    quote:
+      "We hired Ben to film our very simple outdoor elopement, and we couldn't have asked for a better experience. Even though weddings aren't usually his thing, he happily agreed because of our small guest list and short ceremony…",
+    author: "Sankha Maitra",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/YGV4ZhnRBpR1XLzM8",
+  },
+  {
+    quote:
+      "We cannot recommend Ben Childs Film & Video highly enough! Ben is an absolute professional and did the most incredible job of our video project. Ben was communicative, flexible and very understanding…",
+    author: "Lauren Lincoln",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/YGV4ZhnRBpR1XLzM8",
+  },
 ];
 
 export const credentialsBio = `I am an experienced Christchurch based videographer and award-winning filmmaker. In my role as Senior Media and Content Manager for Storypark, I am responsible for developing and executing a content strategy to increase brand awareness and engagement as Storypark grows into North America. I manage the production of high quality video and social media content that provides real value to early childhood education professionals and communicates Storypark's unique purpose.
