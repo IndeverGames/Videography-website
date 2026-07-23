@@ -1,62 +1,94 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ventures, siteConfig } from "@/lib/data";
+import { credentialsBio, testimonials } from "@/lib/data";
+import AboutCTA from "@/components/AboutCTA";
 
 export const metadata = {
   title: "About — Christchurch Videographer Ben Childs",
-  description: "Ben Childs is an award-winning Christchurch videographer and filmmaker with 10+ years experience in affordable video production, film, acting, and interactive media.",
+  description: "Ben Childs is an award-winning Christchurch videographer and filmmaker with 10+ years' experience in affordable video, film, and interactive media.",
   alternates: { canonical: "https://www.benchilds.co.nz/about" },
 };
 
-export default function Ventures() {
+const awards = [
+  { title: "Outstanding Student Award", body: "The New Zealand Film and Television School — selected director for the graduation short film." },
+  { title: "Best Foreign Film", body: "IndieFest USA — Birdsong (2013), the first NZFTVS film to receive international recognition." },
+  { title: "Special Jury Award Nomination", body: "Show Me Shorts — Space Trash Men (2015), with pay-per-view deals including TVNZ on demand." },
+  { title: "Christchurch Runner-up", body: "48 Hours Film Competition — Supernova (2012)." },
+];
+
+export default function About() {
   return (
     <>
-      {/* Header */}
-      <section className="py-20 px-6 bg-gray-950 text-white text-center">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">Ventures</h1>
-      </section>
-
-      {/* Ventures grid */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {ventures.map((venture) => (
-            <Link
-              key={venture.title}
-              href={venture.href}
-              className="group rounded-2xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
-            >
-              <div className="relative w-full h-52 bg-gray-100">
-                <Image
-                  src={venture.image}
-                  alt={venture.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-8">
-                <h2 className="text-xl font-bold mb-3">{venture.title}</h2>
-                <p className="text-gray-600 leading-relaxed">{venture.description}</p>
-              </div>
-            </Link>
-          ))}
+      {/* Hero */}
+      <section className="relative py-32 px-6 bg-gray-950 text-white text-center overflow-hidden">
+        <Image
+          src="/images/hero-2.jpg"
+          alt="Ben Childs"
+          fill
+          className="object-cover object-bottom opacity-30"
+        />
+        <div className="relative z-10 max-w-2xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">Ben Childs · Christchurch, NZ</p>
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">About Me</h1>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            Award-winning filmmaker, experienced videographer, and creative professional based in Christchurch, New Zealand.
+          </p>
         </div>
       </section>
 
-      {/* Contact details */}
-      <section className="py-16 px-6">
-        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-600">
-          <div>
-            <p className="font-semibold text-gray-900 mb-1">Location</p>
-            <p>{siteConfig.address}</p>
+      {/* Bio */}
+      <section className="py-20 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-10">About me</h2>
+          <div className="space-y-5 text-gray-700 leading-relaxed text-lg">
+            {credentialsBio.split("\n\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
           </div>
-          <div>
-            <p className="font-semibold text-gray-900 mb-1">Contact</p>
-            <a href={`mailto:${siteConfig.email}`} className="hover:text-gray-900 transition-colors block">
-              {siteConfig.email}
-            </a>
-            <a href={`tel:${siteConfig.phone}`} className="hover:text-gray-900 transition-colors block">
-              {siteConfig.phone}
-            </a>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-14">What clients say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transition-transform duration-200 md:hover:scale-[1.02] md:hover:shadow-md">
+                <p className="text-gray-700 text-lg leading-relaxed mb-6">&ldquo;{t.quote}&rdquo;</p>
+                <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <AboutCTA />
+
+      {/* Trusted by */}
+      <section className="py-16 px-6 border-b border-gray-100">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-widest text-gray-500 mb-8">Trusted by</p>
+          <Image
+            src="/images/client-logos.png"
+            alt="Clients including Storypark, Fire and Emergency NZ, Beagle Innovations"
+            width={700}
+            height={120}
+            className="mx-auto opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300 cursor-default"
+          />
+        </div>
+      </section>
+
+      {/* Awards */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-10">Awards & recognition</h2>
+          <div className="flex flex-col gap-6">
+            {awards.map((a) => (
+              <div key={a.title} className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
+                <h3 className="font-bold text-lg mb-2">{a.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{a.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

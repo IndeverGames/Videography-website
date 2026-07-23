@@ -127,7 +127,7 @@ export default function Prices() {
           </p>
           <p className="text-gray-500 mb-8">
             Need to know more?{" "}
-            <Link href="/credentials" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
+            <Link href="/about" className="underline underline-offset-4 hover:text-gray-900 transition-colors">
               Read about my background.
             </Link>
           </p>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ContactForm from "@/components/ContactForm";
 
-export default function CredentialsCTA() {
+export default function AboutCTA() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
