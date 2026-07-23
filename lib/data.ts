@@ -119,6 +119,13 @@ export const testimonials = [
   // Newest reviews go first — add new entries here at the top, above this line.
   {
     quote:
+      "Got Ben to record (and edit and voice) a number of instructional / training videos. He was amazing, can't stress that enough, made everything so easy and also was great value! Highly recommended.",
+    author: "Chris Whiteside",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/NA6UonnTqo9pmXDSA",
+  },
+  {
+    quote:
       "Ben videoed Mighty Mix Dog Food's one-day sales training session and we were really pleased with the results. The full 8 hours of training took 93 GB of data in total, over five separate videos which we have uploaded to our website for our franchisees reference. We would recommend Ben to anyone looking to have this type of work done.",
     author: "Grant Day",
     rating: 5,
@@ -175,6 +182,13 @@ export const testimonials = [
   },
   {
     quote:
+      "Ben worked on editing 120mins of video footage I had from my flight in a WW2 Spitfire over the Kent countryside in England recently. His skills and expertise in this process were of the highest order and I couldn't be more satisfied with the final video. Ben was a pleasure to work with, nothing was too much trouble for him, he worked efficiently solving all challenges I presented. I would not hesitate to recommend Ben for your video and editing needs.",
+    author: "Julie Tonkin",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/2jxFWyYvW9A3RRu76",
+  },
+  {
+    quote:
       "Ben understands business objectives and consistently creates engaging, outcome focused work. I'm always blown away by Ben's initiative and efficiency, from scoping and budgeting to directing and editing we know we can rely on Ben to pull it all together even with tight time constraints.",
     author: "Jamie MacDonald, CEO Storypark",
   },
@@ -212,6 +226,13 @@ export const testimonials = [
     quote:
       "Ben takes on responsibility and total care for his assigned duties and one could rely on his total commitment to assigned tasks and responsibilities. Ben is a commendable and valued member in his team and is recognised as a mentor amongst his colleagues and peers.",
     author: "Sashi Meanger, Executive Director, The New Zealand Film and Television School",
+  },
+  {
+    quote:
+      "Ben captured our very small and slightly unconventional wedding ceremony beautifully. He had great communication throughout the whole process and had an amazingly fast turn around with the final edit. Ben is personable and very professional. We've had so many compliments on the video! Really couldn't have asked for anything better on our special day. Thanks, Ben!",
+    author: "Leslie Nylen",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/st3xZp99v7ztfoH46",
   },
 ];
 
