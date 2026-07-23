@@ -3,8 +3,8 @@ import { siteConfig } from "@/lib/data";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "DVD burning/duplication in Christchurch, New Zealand",
-  description: "There aren't many places in Christchurch that still offer this service. If you have an original DVD and want copies, or a video file that you would liked burned to a disc to play on a DVD player, then I'd love to help.",
+  title: "Custom DVD Burning, Authoring & Duplication — Christchurch, NZ",
+  description: "Custom DVD burning, authoring and duplication in Christchurch (Chch), NZ. There aren't many places in Christchurch that still offer this service. If you have an original DVD and want copies, or a video file that you would liked burned to a disc to play on a DVD player, then I'd love to help.",
   alternates: { canonical: "https://www.benchilds.co.nz/dvd-services" },
 };
 

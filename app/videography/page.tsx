@@ -8,7 +8,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export const metadata = {
   title: "Affordable Videography Prices in Christchurch, NZ",
-  description: "Transparent, affordable videography pricing in Christchurch, NZ. Filming from $400, editing from $100. Best value video production in Chch — no hidden costs.",
+  description: "Transparent, affordable videography pricing in Christchurch, NZ. Filming from $480, editing from $450. Best value video production in Chch — no hidden costs.",
   alternates: { canonical: "https://www.benchilds.co.nz/videography" },
 };
 
@@ -54,7 +54,7 @@ export default function Prices() {
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-          Affordable Videography in CHCH
+          Affordable Videography in Christchurch
         </h1>
       </section>
 

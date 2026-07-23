@@ -2,8 +2,8 @@ import { portfolioVideos } from "@/lib/data";
 import VideoGridLightbox from "@/components/VideoGridLightbox";
 
 export const metadata = {
-  title: "Portfolio — Christchurch Videography Work",
-  description: "A full portfolio of corporate, promotional, and testimonial video production by Ben Childs, Christchurch videographer.",
+  title: "Portfolio — Affordable Christchurch Videography Work",
+  description: "Browse Ben Childs' portfolio of affordable corporate, promotional, and testimonial video production for clients across Christchurch and New Zealand.",
   alternates: { canonical: "https://www.benchilds.co.nz/portfolio" },
 };
 

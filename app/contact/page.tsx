@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/data";
 
 export const metadata = {
   title: "Contact — Ben Childs Christchurch Videographer",
-  description: "Get in touch with Ben Childs, Christchurch videographer. Enquire about video production, pricing, and availability.",
+  description: "Get in touch with Ben Childs, Christchurch's most affordable videographer. Enquire about video production, pricing, and availability.",
   alternates: { canonical: "https://www.benchilds.co.nz/contact" },
 };
 

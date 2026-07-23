@@ -7,7 +7,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export const metadata = {
   title: "Ben Childs — Affordable Videographer in Christchurch, NZ",
-  description: "Christchurch's best value videographer. Professional video production from $400 — filming, editing, and corporate video across Christchurch and Canterbury, NZ.",
+  description: "Christchurch's best value videographer. Professional video production from $480 — from filming to final product across Christchurch and Canterbury, NZ.",
   alternates: { canonical: "https://www.benchilds.co.nz" },
 };
 

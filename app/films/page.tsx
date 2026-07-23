@@ -1,8 +1,8 @@
 import { films } from "@/lib/data";
 
 export const metadata = {
-  title: "Films — Award-Winning Short Films",
-  description: "Award-winning short films written and directed by Ben Childs, Christchurch videographer and filmmaker. Screened at international festivals including IndieFest USA and Show Me Shorts.",
+  title: "Films — Christchurch Filmmaker Ben Childs",
+  description: "Award-winning short films written and directed by Ben Childs, Christchurch videographer and filmmaker. Screened at IndieFest USA and Show Me Shorts.",
   alternates: { canonical: "https://www.benchilds.co.nz/films" },
 };
 
