@@ -4,6 +4,7 @@ import { services, equipment, softwareNote, valueProps, testimonials, soloFilmin
 import AnimateIn from "@/components/AnimateIn";
 import ContactForm from "@/components/ContactForm";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export const metadata = {
   title: "Affordable Videography Prices in Christchurch, NZ",
@@ -182,18 +183,9 @@ export default function Prices() {
 
       {/* Testimonials */}
       <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-[1400px] mx-auto">
           <h2 className="text-3xl font-bold text-center mb-14">Testimonials</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.map((t, i) => (
-              <div key={i} className="rounded-2xl p-8 border border-gray-100 shadow-sm bg-gray-50">
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <p className="text-sm font-semibold text-gray-500">— {t.author}</p>
-              </div>
-            ))}
-          </div>
+          <TestimonialCarousel testimonials={testimonials} />
         </div>
       </section>
     </>

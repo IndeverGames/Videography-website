@@ -116,6 +116,21 @@ export const soloFilmingQuote =
   "I've been doing this for more than ten years and have honed the process of solo-filming to a fine art, calmly and effectively performing all the necessary roles at once: director, camera operator, sound recordist, and even interviewer. It's far less intimidating than a full crew, and you'll be amazed at what can be achieved.";
 
 export const testimonials = [
+  // Newest reviews go first — add new entries here at the top, above this line.
+  {
+    quote:
+      "We cannot recommend Ben Childs Film & Video highly enough! Ben is an absolute professional and did the most incredible job of our video project. Ben was communicative, flexible and very understanding. Our video involved working with a lot of very young children and a load of volunteers who were not used to being on camera. Ben was kind, patient and very easy to work with. The final product is polished and filled our brief exactly. We thoroughly enjoyed working with Ben and would gladly recommend him to anyone.",
+    author: "Lauren Lincoln",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/1dGWFtL1DiEiwGHg7",
+  },
+  {
+    quote:
+      "We hired Ben to film our very simple outdoor elopement, and we couldn't have asked for a better experience. Even though weddings aren't usually his thing, he happily agreed because of our small guest list and short ceremony. Originally we planned a 7:30 am ceremony on Mt. Vernon, then had to shift it to 9:30 am due to weather which he was totally accommodating of…",
+    author: "Sankha Maitra",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/YGV4ZhnRBpR1XLzM8",
+  },
   {
     quote:
       "Ben understands business objectives and consistently creates engaging, outcome focused work. I'm always blown away by Ben's initiative and efficiency, from scoping and budgeting to directing and editing we know we can rely on Ben to pull it all together even with tight time constraints.",
@@ -155,20 +170,6 @@ export const testimonials = [
     quote:
       "Ben takes on responsibility and total care for his assigned duties and one could rely on his total commitment to assigned tasks and responsibilities. Ben is a commendable and valued member in his team and is recognised as a mentor amongst his colleagues and peers.",
     author: "Sashi Meanger, Executive Director, The New Zealand Film and Television School",
-  },
-  {
-    quote:
-      "We hired Ben to film our very simple outdoor elopement, and we couldn't have asked for a better experience. Even though weddings aren't usually his thing, he happily agreed because of our small guest list and short ceremony…",
-    author: "Sankha Maitra",
-    rating: 5,
-    googleReviewUrl: "https://maps.app.goo.gl/YGV4ZhnRBpR1XLzM8",
-  },
-  {
-    quote:
-      "We cannot recommend Ben Childs Film & Video highly enough! Ben is an absolute professional and did the most incredible job of our video project. Ben was communicative, flexible and very understanding…",
-    author: "Lauren Lincoln",
-    rating: 5,
-    googleReviewUrl: "https://maps.app.goo.gl/YGV4ZhnRBpR1XLzM8",
   },
 ];
 

@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { testimonials, siteConfig } from "@/lib/data";
+import { testimonials } from "@/lib/data";
 import ContactForm from "@/components/ContactForm";
 import HomeHero from "@/components/HomeHero";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export const metadata = {
   title: "Ben Childs — Affordable Videographer in Christchurch, NZ",
@@ -33,25 +34,11 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-[1400px] mx-auto">
           <h2 className="text-3xl font-bold text-center mb-14">
             What clients say
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {testimonials.slice(0, 4).map((t, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transition-transform duration-200 md:hover:scale-[1.02] md:hover:shadow-md"
-              >
-                <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <p className="text-sm font-semibold text-gray-500">
-                  — {t.author}
-                </p>
-              </div>
-            ))}
-          </div>
+          <TestimonialCarousel testimonials={testimonials} />
           <div className="text-center mt-10">
             <Link href="/about" className="text-sm font-semibold text-gray-500 hover:text-gray-900 transition-colors underline underline-offset-4">
               Read more testimonials

@@ -47,7 +47,7 @@ export default function TestimonialCarousel({ testimonials }: { testimonials: Te
         <button
           onClick={() => scrollByPage(-1)}
           aria-label="Scroll left"
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
+          className="absolute left-0 sm:left-0 top-1/2 -translate-y-1/2 -translate-x-1 sm:-translate-x-4 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
         >
           ‹
         </button>
@@ -56,7 +56,7 @@ export default function TestimonialCarousel({ testimonials }: { testimonials: Te
         <button
           onClick={() => scrollByPage(1)}
           aria-label="Scroll right"
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
+          className="absolute right-0 sm:right-0 top-1/2 -translate-y-1/2 translate-x-1 sm:translate-x-4 z-10 w-10 h-10 rounded-full bg-white shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50"
         >
           ›
         </button>
@@ -64,7 +64,7 @@ export default function TestimonialCarousel({ testimonials }: { testimonials: Te
 
       <div ref={scrollRef} className="flex gap-8 overflow-x-auto snap-x snap-mandatory scroll-smooth px-1 pb-2 -mx-1">
         {testimonials.map((t, i) => {
-          const cardClass = "flex-shrink-0 snap-start w-[360px] h-[460px] flex flex-col justify-between bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transition-transform duration-200 md:hover:scale-[1.02] md:hover:shadow-md";
+          const cardClass = "flex-shrink-0 snap-center w-full sm:w-[540px] h-[460px] flex flex-col justify-between bg-white rounded-2xl p-8 shadow-sm border border-gray-100 transition-transform duration-200 md:hover:scale-[1.02] md:hover:shadow-md";
 
           if (t.googleReviewUrl) {
             return (
