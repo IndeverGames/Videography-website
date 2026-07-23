@@ -25,7 +25,7 @@ export default function HomeHero() {
         src="/images/hero-1.jpg"
         alt="Ben Childs on set"
         fill
-        className="object-cover object-top"
+        className="object-cover object-left"
         priority
       />
       <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-transparent" />

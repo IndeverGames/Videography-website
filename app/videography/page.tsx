@@ -95,7 +95,17 @@ export default function Prices() {
                         <p className="font-semibold uppercase tracking-wide text-sm">{item.name}</p>
                         <p className="font-bold text-lg whitespace-nowrap">{item.price}</p>
                       </div>
-                      <p className="text-sm text-gray-500">{item.description}</p>
+                      <p className="text-sm text-gray-500">
+                        {item.description}
+                        {service.category === "DVD Authoring" && (
+                          <>
+                            {" "}
+                            <Link href="/dvd-services" className="underline underline-offset-2 hover:text-gray-900 transition-colors">
+                              Learn more.
+                            </Link>
+                          </>
+                        )}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -156,7 +166,7 @@ export default function Prices() {
                     src={item.image}
                     alt={item.name}
                     fill
-                    className="object-cover"
+                    className={`object-cover ${item.name.includes("Ronin") ? "object-top" : ""}`}
                   />
                 </div>
                 <div>
