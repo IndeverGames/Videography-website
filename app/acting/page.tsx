@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { actingCredits, siteConfig } from "@/lib/data";
+import { actingCredits } from "@/lib/data";
+import ActingCTA from "@/components/ActingCTA";
 
 export const metadata = {
   title: "Acting — Ben Childs, Christchurch Actor & Director",
@@ -79,18 +80,7 @@ export default function Acting() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 px-6 bg-gray-50 text-center">
-        <p className="text-lg text-gray-700 mb-6">
-          I love acting and directing! So please get in touch to discuss your project with me, great or small.
-        </p>
-        <a
-          href={`mailto:${siteConfig.email}`}
-          className="inline-block px-8 py-3 bg-gray-950 text-white font-semibold rounded-full hover:bg-gray-800 transition-colors"
-        >
-          Get in Touch
-        </a>
-      </section>
+      <ActingCTA />
 
       <div className="py-6 px-6 text-center">
         <Link href="/ventures" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
