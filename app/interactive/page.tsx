@@ -80,7 +80,7 @@ export default function Interactive() {
       <InteractiveCTA />
 
       <div className="py-6 px-6 text-center">
-        <Link href="/about" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+        <Link href="/ventures" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
           ← Back to Ventures
         </Link>
       </div>
