@@ -119,6 +119,48 @@ export const testimonials = [
   // Newest reviews go first — add new entries here at the top, above this line.
   {
     quote:
+      "Ben videoed Mighty Mix Dog Food's one-day sales training session and we were really pleased with the results. The full 8 hours of training took 93 GB of data in total, over five separate videos which we have uploaded to our website for our franchisees reference. We would recommend Ben to anyone looking to have this type of work done.",
+    author: "Grant Day",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/hHwqsSRhj5ucGUqQ6",
+  },
+  {
+    quote:
+      "I have had the pleasure of working with Ben for a couple of video shoots over the past couple of months and he has managed to make an impressive end product occur from the rambling instructions & ideas I have floated at him! His professional, easy-going manner while filming and his editing skills have made him a joy to work with and I will continue to use him in the future. Thanks Ben!",
+    author: "Nathan Brand",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/MBKRBmD4V2VKZppf6",
+  },
+  {
+    quote:
+      "I reached out to Ben about recording some monologues for my acting portfolio, and I was genuinely impressed by his professionalism. He went above and beyond—helping me find a studio, organizing all the equipment, and setting up the perfect backdrops for the shoot. The guidance and support I received throughout the filming process were incredibly valuable. I'm really happy with the final edits; the quality is outstanding. I'll definitely be working with Ben again! :))",
+    author: "Jay Valiev",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/N7VbHF97AEswuc8N7",
+  },
+  {
+    quote:
+      "I cannot recommend Ben Childs highly enough. From the very beginning he was warm, professional, and deeply understanding of the meaning behind our special event. He brought not only technical skill but also genuine heart to the project, capturing every detail with care and respect. The finished video was beautifully crafted, moving, and exceeded all our expectations. Ben's creativity, patience, and dedication made the entire process seamless and memorable. If you are looking for someone who will honour your story and deliver with excellence, Ben is the one. Thank you, Ben, for giving us something we will treasure forever.",
+    author: "Nyree Bowen-Lilly",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/cgYgD9uR4RBSsqFJA",
+  },
+  {
+    quote:
+      "Ben is a pleasure to work with, efficient, excellent communication and produces a high quality product. I highly recommend Ben's services.",
+    author: "William Jamieson",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/m3Vg2AwXHqRJFXgd7",
+  },
+  {
+    quote:
+      "Smooch Dental Spa recently hired Ben to produce a walk through of our new clinic and a technical video to help patients understand our hygiene process. We absolutely love the results which you can see at our website. We found Ben very professional and a pleasure to work with, he was particularly good at getting everyone to feel at ease in front of the lens and guiding us through our long filming day.",
+    author: "George, Smooch Dental Spa",
+    rating: 5,
+    googleReviewUrl: "https://maps.app.goo.gl/EEdV1y7ZkYuQDKnN7",
+  },
+  {
+    quote:
       "We cannot recommend Ben Childs Film & Video highly enough! Ben is an absolute professional and did the most incredible job of our video project. Ben was communicative, flexible and very understanding. Our video involved working with a lot of very young children and a load of volunteers who were not used to being on camera. Ben was kind, patient and very easy to work with. The final product is polished and filled our brief exactly. We thoroughly enjoyed working with Ben and would gladly recommend him to anyone.",
     author: "Lauren Lincoln",
     rating: 5,
