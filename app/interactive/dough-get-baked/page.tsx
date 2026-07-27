@@ -10,7 +10,7 @@ const features = [
   { title: "You are bread dough", description: "Warning: this demo is extremely high in carbohydrates. You're a lump of bread dough, fallen from grace into a world of baked goods." },
   { title: "Split & squish", description: "Use clever splitting and squishing mechanics to navigate obstacles and solve puzzles." },
   { title: "A world of baked goods", description: "Explore a whimsical world filled with breads, pastries, and all manner of baked creatures." },
-  { title: "Find the oven", description: "Your life mission is simple: find an oven and get baked. Puzzle your way to redemption." },
+  { title: "Mission: Get Baked", description: "This is your one true path. Follow it, or die unsavoured." },
 ];
 
 export default function DoughGetBaked() {
