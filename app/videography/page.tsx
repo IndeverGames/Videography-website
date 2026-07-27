@@ -152,6 +152,14 @@ export default function Prices() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="py-20 px-6">
+        <div className="max-w-[1400px] mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-14">Testimonials</h2>
+          <TestimonialCarousel testimonials={testimonials} />
+        </div>
+      </section>
+
       {/* Equipment */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto">
@@ -178,14 +186,6 @@ export default function Prices() {
             ))}
           </div>
           <p className="mt-10 text-gray-500 text-sm">{softwareNote}</p>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 px-6">
-        <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-14">Testimonials</h2>
-          <TestimonialCarousel testimonials={testimonials} />
         </div>
       </section>
     </>
