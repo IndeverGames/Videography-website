@@ -54,7 +54,7 @@ export default function Prices() {
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-          Affordable Videography in Christchurch
+          Affordable Videography in CHCH
         </h1>
       </section>
 
