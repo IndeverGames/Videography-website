@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { type Video, thumbnailFor, embedSrc } from "@/lib/videoEmbed";
 import VideoModal from "./VideoModal";
 
 export default function PortfolioCarousel({ videos }: { videos: Video[] }) {
-  const [activeVideo, setActiveVideo] = useState<Video | null>(null);
+  const [active, setActive] = useState<number | null>(null);
+  const close = useCallback(() => setActive(null), []);
+  const prev = useCallback(() => setActive(i => (i !== null ? (i - 1 + videos.length) % videos.length : null)), [videos.length]);
+  const next = useCallback(() => setActive(i => (i !== null ? (i + 1) % videos.length : null)), [videos.length]);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -53,10 +56,10 @@ export default function PortfolioCarousel({ videos }: { videos: Video[] }) {
         )}
 
         <div ref={scrollRef} className="flex gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth px-1 pb-4 -mx-1">
-        {videos.map((video) => (
+        {videos.map((video, i) => (
           <button
             key={video.embedUrl}
-            onClick={() => setActiveVideo(video)}
+            onClick={() => setActive(i)}
             className="group flex-shrink-0 w-64 snap-start text-left"
           >
             <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-200 shadow-sm">
@@ -80,11 +83,14 @@ export default function PortfolioCarousel({ videos }: { videos: Video[] }) {
         </div>
       </div>
 
-      {activeVideo && (
+      {active !== null && (
         <VideoModal
-          src={embedSrc(activeVideo)}
-          title={activeVideo.title}
-          onClose={() => setActiveVideo(null)}
+          src={embedSrc(videos[active])}
+          title={videos[active].title}
+          onClose={close}
+          onPrev={prev}
+          onNext={next}
+          counter={`${active + 1} / ${videos.length}`}
         />
       )}
     </>
