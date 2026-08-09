@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { type Video, thumbnailFor, embedSrc } from "@/lib/videoEmbed";
+import VideoModal from "./VideoModal";
 
 export default function VideoGridLightbox({ videos }: { videos: Video[] }) {
   const [active, setActive] = useState<number | null>(null);
@@ -9,22 +10,6 @@ export default function VideoGridLightbox({ videos }: { videos: Video[] }) {
   const close = useCallback(() => setActive(null), []);
   const prev = useCallback(() => setActive(i => (i !== null ? (i - 1 + videos.length) % videos.length : null)), [videos.length]);
   const next = useCallback(() => setActive(i => (i !== null ? (i + 1) % videos.length : null)), [videos.length]);
-
-  useEffect(() => {
-    if (active === null) return;
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [active, close, prev, next]);
-
-  useEffect(() => {
-    document.body.style.overflow = active !== null ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [active]);
 
   return (
     <>
@@ -60,63 +45,14 @@ export default function VideoGridLightbox({ videos }: { videos: Video[] }) {
 
       {/* Lightbox */}
       {active !== null && (
-        <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-          onClick={close}
-        >
-          <div
-            className="relative"
-            // Target 75% of viewport width, but never let the 16:9 frame (plus
-            // the caption/buttons below it) grow taller than the viewport --
-            // otherwise the top of the video gets pushed off-screen.
-            style={{ width: "min(75vw, calc((90vh - 110px) * 16 / 9))" }}
-            onClick={e => e.stopPropagation()}
-          >
-            {/* Custom dark frame */}
-            <div className="relative bg-gray-950 rounded-2xl p-3 shadow-2xl">
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
-                <iframe
-                  src={embedSrc(videos[active])}
-                  title={videos[active].title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
-
-              {/* Close */}
-              <button
-                onClick={close}
-                aria-label="Close"
-                className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-white text-gray-900 shadow-md flex items-center justify-center hover:bg-gray-100 transition-colors"
-              >
-                ✕
-              </button>
-            </div>
-
-            <p className="mt-4 text-white/80 text-sm text-center">
-              {videos[active].title} — {active + 1} / {videos.length}
-            </p>
-
-            <div className="mt-4 flex items-center justify-center gap-4">
-              <button
-                onClick={e => { e.stopPropagation(); prev(); }}
-                className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-colors"
-                aria-label="Previous video"
-              >
-                ‹ Previous
-              </button>
-              <button
-                onClick={e => { e.stopPropagation(); next(); }}
-                className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-colors"
-                aria-label="Next video"
-              >
-                Next ›
-              </button>
-            </div>
-          </div>
-        </div>
+        <VideoModal
+          src={embedSrc(videos[active])}
+          title={videos[active].title}
+          onClose={close}
+          onPrev={prev}
+          onNext={next}
+          counter={`${active + 1} / ${videos.length}`}
+        />
       )}
     </>
   );

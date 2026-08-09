@@ -2,21 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { type Video, thumbnailFor, embedSrc } from "@/lib/videoEmbed";
+import VideoModal from "./VideoModal";
 
 export default function PortfolioCarousel({ videos }: { videos: Video[] }) {
   const [activeVideo, setActiveVideo] = useState<Video | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
-
-  useEffect(() => {
-    if (!activeVideo) return;
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActiveVideo(null);
-    };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
-  }, [activeVideo]);
 
   useEffect(() => {
     const el = scrollRef.current;
@@ -89,33 +81,11 @@ export default function PortfolioCarousel({ videos }: { videos: Video[] }) {
       </div>
 
       {activeVideo && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
-          onClick={() => setActiveVideo(null)}
-        >
-          <div
-            className="relative w-full max-w-3xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setActiveVideo(null)}
-              aria-label="Close video"
-              className="absolute -top-10 right-0 text-white text-3xl leading-none hover:text-gray-300"
-            >
-              &times;
-            </button>
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-black">
-              <iframe
-                src={embedSrc(activeVideo)}
-                title={activeVideo.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin"
-                className="absolute inset-0 w-full h-full"
-              />
-            </div>
-          </div>
-        </div>
+        <VideoModal
+          src={embedSrc(activeVideo)}
+          title={activeVideo.title}
+          onClose={() => setActiveVideo(null)}
+        />
       )}
     </>
   );
