@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { type Video, thumbnailFor, embedSrc } from "@/lib/videoEmbed";
+import { type Video, thumbnailFor, embedSrc, subtitleFor } from "@/lib/videoEmbed";
 import VideoModal from "./VideoModal";
 
 export default function VideoGridLightbox({ videos }: { videos: Video[] }) {
@@ -38,7 +38,29 @@ export default function VideoGridLightbox({ videos }: { videos: Video[] }) {
                 </div>
               </div>
             </div>
-            <p className="mt-3 text-sm font-semibold text-gray-700 px-1">{video.title}</p>
+            <div className="flex items-center gap-3 mt-3 px-1">
+              <div className="min-w-0">
+                <p className="text-sm font-semibold text-gray-700 truncate">{video.title}</p>
+                {subtitleFor(video) && (
+                  <p className="text-xs text-gray-500 truncate mt-0.5">{subtitleFor(video)}</p>
+                )}
+              </div>
+              {video.clientLogo && (
+                video.clientLogoLight ? (
+                  <span className="self-stretch bg-gray-900 rounded-md px-2 flex-shrink-0 flex items-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={video.clientLogo} alt="" className="h-full max-h-8 py-1 w-auto object-contain" />
+                  </span>
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={video.clientLogo}
+                    alt=""
+                    className="self-stretch h-full max-h-10 w-auto object-contain flex-shrink-0"
+                  />
+                )
+              )}
+            </div>
           </button>
         ))}
       </div>
@@ -48,6 +70,10 @@ export default function VideoGridLightbox({ videos }: { videos: Video[] }) {
         <VideoModal
           src={embedSrc(videos[active])}
           title={videos[active].title}
+          subtitle={subtitleFor(videos[active])}
+          clientLogo={videos[active].clientLogo}
+          clientLogoLight={videos[active].clientLogoLight}
+          type={videos[active].platform === "file" ? "file" : "iframe"}
           onClose={close}
           onPrev={prev}
           onNext={next}

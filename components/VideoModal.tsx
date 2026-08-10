@@ -8,6 +8,10 @@ const SWIPE_THRESHOLD = 50;
 export default function VideoModal({
   src,
   title,
+  subtitle,
+  clientLogo,
+  clientLogoLight,
+  type = "iframe",
   onClose,
   onPrev,
   onNext,
@@ -15,6 +19,10 @@ export default function VideoModal({
 }: {
   src: string;
   title: string;
+  subtitle?: string | null;
+  clientLogo?: string;
+  clientLogoLight?: boolean;
+  type?: "iframe" | "file";
   onClose: () => void;
   onPrev?: () => void;
   onNext?: () => void;
@@ -87,22 +95,49 @@ export default function VideoModal({
 
           {/* Video */}
           <div className="relative w-full aspect-video bg-black">
-            <iframe
-              src={src}
-              title={title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-              className="absolute inset-0 w-full h-full"
-            />
+            {type === "file" ? (
+              <video
+                src={src}
+                controls
+                autoPlay
+                className="absolute inset-0 w-full h-full"
+              >
+                <track kind="captions" />
+              </video>
+            ) : (
+              <iframe
+                src={src}
+                title={title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                referrerPolicy="strict-origin-when-cross-origin"
+                className="absolute inset-0 w-full h-full"
+              />
+            )}
           </div>
 
           {/* Footer */}
           <div className="flex items-center justify-between gap-4 px-4 py-3 border-t border-white/10">
-            <p className="text-white/70 text-sm truncate">
-              {title}
-              {counter && <span className="text-white/40"> — {counter}</span>}
-            </p>
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="min-w-0">
+                <p className="text-white font-semibold text-base truncate">
+                  {title}
+                  {counter && <span className="text-white/40 font-normal"> — {counter}</span>}
+                </p>
+                {subtitle && <p className="text-white/50 text-sm truncate mt-0.5">{subtitle}</p>}
+              </div>
+              {clientLogo && (
+                clientLogoLight ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={clientLogo} alt="" className="h-full max-h-8 w-auto object-contain flex-shrink-0" />
+                ) : (
+                  <span className="self-stretch bg-white rounded-md px-2 flex-shrink-0 flex items-center">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={clientLogo} alt="" className="h-full max-h-10 py-1.5 w-auto object-contain" />
+                  </span>
+                )
+              )}
+            </div>
             {onPrev && onNext && (
               <div className="flex items-center gap-2 flex-shrink-0">
                 <button

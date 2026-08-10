@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { type Video, thumbnailFor, embedSrc } from "@/lib/videoEmbed";
+import { type Video, thumbnailFor, embedSrc, subtitleFor } from "@/lib/videoEmbed";
 import VideoModal from "./VideoModal";
 
 export default function PortfolioCarousel({ videos }: { videos: Video[] }) {
@@ -87,6 +87,10 @@ export default function PortfolioCarousel({ videos }: { videos: Video[] }) {
         <VideoModal
           src={embedSrc(videos[active])}
           title={videos[active].title}
+          subtitle={subtitleFor(videos[active])}
+          clientLogo={videos[active].clientLogo}
+          clientLogoLight={videos[active].clientLogoLight}
+          type={videos[active].platform === "file" ? "file" : "iframe"}
           onClose={close}
           onPrev={prev}
           onNext={next}
