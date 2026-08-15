@@ -422,9 +422,9 @@ export const films = [
 
 export const ventures = [
   {
-    title: "Video Production",
+    title: "Professional Videography",
     description:
-      "Allow me to bring your ideas to life with outstanding, stress-free, cost-effective videos.",
+      "Ben Childs Film & Video brings your ideas to life with outstanding, stress-free, cost-effective videos.",
     image: "/images/ventures-video-production.jpg",
     href: "/videography",
   },
