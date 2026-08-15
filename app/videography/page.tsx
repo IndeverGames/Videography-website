@@ -65,7 +65,7 @@ export default function Prices() {
           Affordable Videography in CHCH
         </h1>
         <p className="mt-4 text-xs uppercase tracking-widest text-gray-400">
-          Corporate Videography. Business Videography. Testimonials.
+          Professional Corporate Videography. Business Videography. Testimonials.
         </p>
       </section>
 
