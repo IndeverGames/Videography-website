@@ -53,7 +53,7 @@ export default function Prices() {
 
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight max-w-4xl mx-auto">
           Affordable Corporate & Business Videography in Christchurch
         </h1>
       </section>
