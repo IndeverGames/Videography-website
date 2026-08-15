@@ -54,7 +54,7 @@ export default function Prices() {
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-          Affordable Videography in CHCH
+          Affordable Corporate & Business Videography in Christchurch
         </h1>
       </section>
 
@@ -139,7 +139,7 @@ export default function Prices() {
       {/* Portfolio highlights */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-14">Examples of my work</h2>
+          <h2 className="text-3xl font-bold text-center mb-14">Examples of work by Ben Childs Film & Video</h2>
           <PortfolioCarousel videos={portfolioVideos} />
           <div className="text-center mt-4">
             <Link
