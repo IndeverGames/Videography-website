@@ -40,6 +40,14 @@ const faqSchema = {
         text: "Yes. Ben Childs provides affordable corporate video production across Christchurch and Canterbury. Services include filming, editing, testimonials, product videos, and more — all at transparent, fixed prices.",
       },
     },
+    {
+      "@type": "Question",
+      name: "Do you offer business videography for small companies?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes — Ben Childs Film & Video provides business videography for companies of all sizes across Christchurch, from single testimonial videos to ongoing content production, all at transparent, affordable pricing.",
+      },
+    },
   ],
 };
 
