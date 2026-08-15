@@ -4,7 +4,7 @@ import AboutCTA from "@/components/AboutCTA";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 export const metadata = {
-  title: "About — Christchurch Videographer Ben Childs",
+  title: "About — Professional Christchurch Videographer Ben Childs",
   description: "Ben Childs is an award-winning Christchurch videographer and filmmaker with 10+ years' experience in affordable video, film, and interactive media.",
   alternates: { canonical: "https://www.benchilds.co.nz/about" },
 };
