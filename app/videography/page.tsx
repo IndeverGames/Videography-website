@@ -90,7 +90,7 @@ export default function Prices() {
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">Pricing</h2>
-          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-14">I provide transparent, affordable pricing for when you need quality video without the expense and drama of a full production crew.</p>
+          <p className="text-gray-500 text-center max-w-2xl mx-auto mb-14">I provide transparent, affordable pricing for when you need quality, professional video without the expense and drama of a full production crew.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {services.map((service) => (
               <div key={service.category}>
