@@ -20,7 +20,7 @@ export default function HomeHero() {
   const anim = ready ? "animate-fade-up" : "";
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-end pb-24 px-6 text-white overflow-hidden">
+    <section className="relative min-h-[90vh] flex flex-col justify-end pt-28 pb-24 px-6 text-white overflow-hidden">
       <Image
         src="/images/hero-1.jpg"
         alt="Ben Childs on set"
