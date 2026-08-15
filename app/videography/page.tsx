@@ -56,6 +56,9 @@ export default function Prices() {
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
           Affordable Videography in CHCH
         </h1>
+        <p className="mt-4 text-xs uppercase tracking-widest text-gray-400">
+          Corporate Videography. Business Videography. Testimonials.
+        </p>
       </section>
 
       {/* Why choose */}
