@@ -31,7 +31,7 @@ export default function HomeHero() {
       <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-transparent" />
       <div className="relative z-10 text-center mx-auto w-full max-w-3xl">
         <p className={`${anim} delay-100 text-xs uppercase tracking-widest text-gray-300 mb-4`} style={{ opacity: ready ? undefined : 0 }}>
-          Ben Childs · Christchurch, New Zealand
+          Ben Childs Film & Video · Christchurch, New Zealand
         </p>
         <h1 className={`${anim} delay-250 text-5xl md:text-7xl font-bold tracking-tight leading-tight mb-6`} style={{ opacity: ready ? undefined : 0 }}>
           Christchurch Videography

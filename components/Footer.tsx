@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <p className="text-white font-semibold mb-2">Ben Childs</p>
+            <p className="text-white font-semibold mb-2">Ben Childs Film & Video</p>
             <p className="text-sm">Christchurch Affordable Videography</p>
           </div>
 
