@@ -102,6 +102,12 @@ export const equipment = [
     image: "/images/equipment-aputure.jpg",
   },
   {
+    name: "Mobile Teleprompter",
+    description:
+      "Breeze through your scripts with confidence. Auto-scrolling prompts scroll with your voice so you can deliver at your own pace.",
+    image: "/images/teleprompter.jpg",
+  },
+  {
     name: "Edit suite",
     description:
       "Powered by AMD's flagship 5950x processor, RTX 4080 graphics, dual-screen 4K monitoring, and blazing fast SSDs, I waste no time waiting for videos to render.",
