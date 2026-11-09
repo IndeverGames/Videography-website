@@ -4,6 +4,7 @@ import { testimonials } from "@/lib/data";
 import ContactForm from "@/components/ContactForm";
 import HomeHero from "@/components/HomeHero";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import AvailabilityBanner from "@/components/AvailabilityBanner";
 
 export const metadata = {
   title: "Ben Childs — Affordable Videographer in Christchurch, NZ",
@@ -14,6 +15,7 @@ export const metadata = {
 export default function Home() {
   return (
     <>
+      <AvailabilityBanner />
       <HomeHero />
 
       {/* Client logos */}

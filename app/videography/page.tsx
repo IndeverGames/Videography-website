@@ -5,6 +5,7 @@ import AnimateIn from "@/components/AnimateIn";
 import ContactForm from "@/components/ContactForm";
 import PortfolioCarousel from "@/components/PortfolioCarousel";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import AvailabilityBanner from "@/components/AvailabilityBanner";
 
 export const metadata = {
   title: "Affordable Videography Prices in Christchurch, NZ",
@@ -54,6 +55,7 @@ const faqSchema = {
 export default function Prices() {
   return (
     <>
+      <AvailabilityBanner />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

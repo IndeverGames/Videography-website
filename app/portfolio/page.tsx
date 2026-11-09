@@ -1,5 +1,6 @@
 import { portfolioVideos } from "@/lib/data";
 import VideoGridLightbox from "@/components/VideoGridLightbox";
+import AvailabilityBanner from "@/components/AvailabilityBanner";
 
 export const metadata = {
   title: "Portfolio — Affordable Christchurch Videography Work",
@@ -10,6 +11,7 @@ export const metadata = {
 export default function Portfolio() {
   return (
     <>
+      <AvailabilityBanner />
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">Portfolio</h1>
