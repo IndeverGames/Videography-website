@@ -78,7 +78,7 @@ export default function DavyJonesDeckhand() {
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">Davy Jones&apos; Deckhand</h1>
         <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
           Parry and counter-attack your way into legend in this swashbuckling roguelike deckbuilder. Following our second successful{" "}
-          <a href="https://www.nz-code.nz/" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white transition-colors">CODE NZ</a>
+          <a href="https://www.nz-code.nz/post/21-studios-awarded-over-2m-in-code-funding" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white transition-colors">CODE NZ</a>
           {" "}grant, I am now full time working on my debut commercial videogame, Davy Jones&apos; Deckhand.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
