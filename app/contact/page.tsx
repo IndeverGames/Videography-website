@@ -1,5 +1,6 @@
 import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/lib/data";
+import AvailabilityBanner from "@/components/AvailabilityBanner";
 
 export const metadata = {
   title: "Contact — Ben Childs Christchurch Videographer",
@@ -10,6 +11,7 @@ export const metadata = {
 export default function Contact() {
   return (
     <>
+      <AvailabilityBanner />
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">Get in Touch</h1>
         <p className="text-gray-300 max-w-xl mx-auto text-lg">
