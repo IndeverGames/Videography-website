@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { siteConfig } from "@/lib/data";
 import ContactForm from "@/components/ContactForm";
+import AvailabilityBanner from "@/components/AvailabilityBanner";
 
 export const metadata = {
   title: "Custom DVD Burning, Authoring & Duplication — Christchurch, NZ",
@@ -11,6 +12,7 @@ export const metadata = {
 export default function DvdServices() {
   return (
     <>
+      <AvailabilityBanner />
       {/* Header */}
       <section className="py-20 px-6 bg-gray-950 text-white text-center">
         <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
